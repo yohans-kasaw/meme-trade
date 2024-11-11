@@ -1,8 +1,59 @@
+"use client";
 import Image from "next/image";
-import {Button} from "antd";
+import { Button } from "antd";
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchTokens, addToken } from "@/lib/slices/userTokenSlice";
+import { fetchAlarms } from "@/lib/slices/userAlarmsSlice";
+import { fetchSignals } from "@/lib/slices/tradingSignalSlice";
 
 export default function Home() {
-  return <div>hello world
-        <Button type="primary"> hello world</Button>
-    </div>;
+  const dispatch = useDispatch();
+  
+  // Selectors for tokens, alarms, and signals
+  const tokens = useSelector((state) => state.userTokens.items);
+  const tokensStatus = useSelector((state) => state.userTokens.status);
+  const alarms = useSelector((state) => state.userAlarms.items);
+  const alarmsStatus = useSelector((state) => state.userAlarms.status);
+  const signals = useSelector((state) => state.tradingSignals.items);
+  const signalsStatus = useSelector((state) => state.tradingSignals.status);
+
+  // Fetch tokens, alarms, and signals when each status is "idle"
+  useEffect(() => {
+    if (tokensStatus === "idle") {
+      dispatch(fetchTokens());
+    }
+    if (alarmsStatus === "idle") {
+      dispatch(fetchAlarms());
+    }
+    if (signalsStatus === "idle") {
+      dispatch(fetchSignals());
+    }
+  }, [tokensStatus, alarmsStatus, signalsStatus, dispatch]);
+
+  console.log("Tokens:", tokens);
+  console.log("Alarms:", alarms);
+  console.log("Signals:", signals);
+
+  return (
+    <div>
+      <h1>Hello World</h1>
+      <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-row items-center justify-center space-x-4">
+          <div>
+            <h2>Tokens:</h2>
+            <p>{tokens.length}</p>
+          </div>
+          <div>
+            <h2>Alarms:</h2>
+            <p>{alarms.length}</p>
+          </div>
+          <div>
+            <h2>Signals:</h2>
+            <p>{signals.length}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
