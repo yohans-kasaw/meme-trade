@@ -15,7 +15,7 @@ export default function Home() {
   const tokensStatus = useSelector((state) => state.userTokens.status);
   //const alarms = useSelector((state) => state.userAlarms.items);
   const alarmsStatus = useSelector((state) => state.userAlarms.status);
-  //const signals = useSelector((state) => state.tradingSignals.items);
+  const signals = useSelector((state) => state.tradingSignals.items);
   const signalsStatus = useSelector((state) => state.tradingSignals.status);
 
   // Fetch tokens, alarms, and signals when each status is "idle"
@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <div>
       <AppBar />
-      <TokenBoard tokens={tokens} />
+      <TokenBoard tokens={tokens} signals={signals} />
     </div>
   );
 }

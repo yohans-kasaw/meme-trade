@@ -1,35 +1,10 @@
-import { Tabs} from "antd";
+import { Tabs } from "antd";
 import TokenGroup from "./TokenGroup";
 import { useState } from "react";
+import TradingSignal from "./TradingSignal";
+import TabSegments from "./TabSegments";
 
-const CustomSegmented = ({ value, onChange, options = [] }) => {
-  const [selected, setSelected] = useState(value || options[0]);
-
-  const handleSelect = (option) => {
-    setSelected(option);
-    onChange(option);
-  };
-
-  return (
-    <div className="flex justify-center  overflow-hidden gap-2 mb-4">
-      {options.map((option, index) => (
-        <button
-          key={index}
-          onClick={() => handleSelect(option)}
-          className={`transition-colors duration-200 text-white rounded-sm text-primaryBlack px-4 text-lg ${
-            selected === option ? "bg-accentLime text-midGray" : "bg-midGray"
-          }`}
-        >
-          {option != "4" && option}
-          {option == "4" && "Alarm"}
-
-        </button>
-      ))}
-    </div>
-  );
-};
-
-function TokenBoard({ tokens }) {
+function TokenBoard({ tokens, signals }) {
   // Sorting tokens in different ways
   const TokenSortedByPrice = [...tokens.slice(0, 3)].sort(
     (a, b) => a.price - b.price,
@@ -61,7 +36,7 @@ function TokenBoard({ tokens }) {
     {
       key: "4",
       label: "4",
-      children: <div className="min-h-[90vh] text-white">Alarm</div>,
+      children: <TradingSignal signals={signals} />,
     },
   ];
 
@@ -69,14 +44,16 @@ function TokenBoard({ tokens }) {
   return (
     <div>
       {/* Display side by side on medium to large screens */}
-      <div className="hidden md:flex flex-row gap-3.5 mb-10 items-stretch text-white px-1">
-        <TokenGroup tokens={TokenSortedByName} />
-        <TokenGroup tokens={TokenSortedByStar} />
-        <TokenGroup tokens={TokenSortedByPrice} />
+      <div className="hidden lg:flex flex-row gap-3.5 mb-10 items-stretch text-white px-1">
+        {tabItems.map((item, index) => (
+          <div key={index} className="flex-1 basis-0">
+            {item.children}
+          </div>
+        ))}
       </div>
 
       {/* Display as tabs on small screens */}
-      <div className="md:hidden text-white">
+      <div className="lg:hidden text-white md:max-w-[70vw] md:m-auto">
         <Tabs
           defaultActiveKey="1"
           type="card"
@@ -86,9 +63,10 @@ function TokenBoard({ tokens }) {
           animated={true}
           renderTabBar={() => null}
         />
-        <CustomSegmented
+        <TabSegments
           value={alignValue}
           onChange={setAlignValue}
+          signalsCount={signals.length}
           options={["1", "2", "3", "4"]}
         />
       </div>
@@ -97,3 +75,4 @@ function TokenBoard({ tokens }) {
 }
 
 export default TokenBoard;
+

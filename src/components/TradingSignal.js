@@ -1,7 +1,8 @@
 import SignalCall from "./SignalCall";
 import NotificationIcon from "../../public/svg_icons/notification.svg";
-import SolanaChainIcon from "../../public/svg_icons/solana-signal.svg";
-import DownArrowIcon from "../../public/svg_icons/down_arrow.svg";
+import DownPiramidIcon from "../../public/svg_icons/down_piramid.svg";
+
+import Image from "next/image";
 
 const TradingSignal = ({ signals }) => {
   const handleClick = () => {
@@ -9,19 +10,23 @@ const TradingSignal = ({ signals }) => {
   };
 
   return (
-    <div className="text-white mx-3">
-      <div className="flex flex-row items-center my-4 justify-between">
-        <div className="flex flex-row gap-2 items-center">
-          <NotificationIcon />
-          <div className="rounded-lg bg-accentBlue px-2">{signals.length}</div>
+    <div className="flex flex-col gap-3 text-white text-xs justify-center items-stretch">
+      <div className="flex flex-row items-center justify-between px-1">
+        <div className="flex flex-row gap-0 items-center">
+          <NotificationIcon style={{ transform: "scale(0.7)" }} />
+          <div className="bg-accentBlue rounded-sm text-primaryBlack px-1 text-xs">{signals.length}</div>
         </div>
-        <button
-          className="border border-midGray bg-darkGray rounded-lg px-4 py-2 flex items-center"
+        <div
+          className="flex flex-row justify-start items-center gap-2 bg-darkGray rounded-[6px] border-[1px] border-midGray pl-2 py-1"
           onClick={handleClick}
         >
-          <SolanaChainIcon className="mr-2" />
-          <DownArrowIcon />
-        </button>
+          <Image
+            src={"/svg_icons/Solana-chain-image.png"}
+            width={15}
+            height={15}
+          />
+          <DownPiramidIcon style={{ transform: "scale(0.7)" }} />
+        </div>
       </div>
 
       {/* list of signals */}
