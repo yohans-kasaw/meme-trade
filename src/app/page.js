@@ -5,6 +5,7 @@ import { fetchTokens } from "@/lib/slices/userTokenSlice";
 import { fetchAlarms } from "@/lib/slices/userAlarmsSlice";
 import { fetchSignals } from "@/lib/slices/tradingSignalSlice";
 import TokenItem from "@/components/TokenItem";
+import TradingSignal from "@/components/TradingSignal";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -35,8 +36,9 @@ export default function Home() {
   console.log("Signals:", signals);
 
   return (
-    <div className="">
+    <div className="flex flex-col">
       <TokenItem />
+      <TradingSignal signals={signals} />
     </div>
   );
 }
