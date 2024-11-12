@@ -37,25 +37,8 @@ export default function Home() {
   console.log("Signals:", signals);
 
   return (
-    <div>
+    <div className="">
       <TokenItem />
-      <h1>Hello World</h1>
-      <div className="flex flex-col items-center justify-center">
-        <div className="flex flex-row items-center justify-center space-x-4">
-          <div>
-            <h2>Tokens:</h2>
-            <p>{tokens.length}</p>
-          </div>
-          <div>
-            <h2>Alarms:</h2>
-            <p>{alarms.length}</p>
-          </div>
-          <div>
-            <h2>Signals:</h2>
-            <p>{signals.length}</p>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
