@@ -1,6 +1,7 @@
 import DownPiramidIcon from "../../public/svg_icons/down_piramid.svg";
 import SortSettingIcon from "../../public/svg_icons/sort_setting.svg";
 import FilterSettingIcon from "../../public/svg_icons/filter_setting_icon.svg";
+import Image from "next/image";
 
 export function CountBadge({ count }) {
   return (
@@ -27,10 +28,11 @@ function ScaledIcon({ Icon, Scale = 0.7 }) {
 function TokenFilterPanel() {
   return (
     <div className="text-white flex justify-center items-stretch gap-1.5 p-1 pt-2">
-      <FilterButton gapClass="gap-3" additionalClass="pl-2">
-        <img
+      <FilterButton gapClass="gap-1" additionalClass="pl-2">
+        <Image
           src={"/svg_icons/Solana-chain-image.png"}
-          style={{ width: "1rem", height: "1rem" }}
+          width={15}
+          height={15}
         />
         <ScaledIcon Icon={DownPiramidIcon} />
       </FilterButton>

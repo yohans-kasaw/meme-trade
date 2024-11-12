@@ -1,8 +1,6 @@
-import { Tabs, Segmented } from "antd";
-import TokenFilterPanel from "./TokenFilterPanel";
+import { Tabs} from "antd";
 import TokenGroup from "./TokenGroup";
 import { useState } from "react";
-import { CountBadge } from "./TokenFilterPanel";
 
 const CustomSegmented = ({ value, onChange, options = [] }) => {
   const [selected, setSelected] = useState(value || options[0]);
@@ -86,7 +84,7 @@ function TokenBoard({ tokens }) {
           items={tabItems}
           activeKey={alignValue}
           animated={true}
-          renderTabBar={(props) => null}
+          renderTabBar={() => null}
         />
         <CustomSegmented
           value={alignValue}
