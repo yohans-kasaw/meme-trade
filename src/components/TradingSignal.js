@@ -13,10 +13,10 @@ const TradingSignal = ({ signals }) => {
       <div className="flex flex-row items-center my-4 justify-between">
         <div className="flex flex-row gap-2 items-center">
           <NotificationIcon />
-          <div className="rounded-lg bg-[#00C2FF] px-2">{signals.length}</div>
+          <div className="rounded-lg bg-accentBlue px-2">{signals.length}</div>
         </div>
         <button
-          className="border border-gray-500 bg-[#292828] rounded-lg px-4 py-2 flex items-center"
+          className="border border-midGray bg-darkGray rounded-lg px-4 py-2 flex items-center"
           onClick={handleClick}
         >
           <SolanaChainIcon className="mr-2" />

@@ -5,27 +5,31 @@ function SignalCall({ signal }) {
   return (
     <div className="my-1 text-white">
       {/* Signal Type */}
-      <div className="flex items-center border border-green-500 py-1 mb-2">
-        <div className=" ml-2 border border-green-500 rounded-full p-1 flex items-center justify-center">
-          {signal.call_type === "pump" ? <TabletMedIcon /> : <MoonShotIcon />}
+      <div
+        className={`flex items-center py-1 mb-2 border ${
+          signal.call_type === "Pump" ? "border-primary" : "border-secondary"
+        }`}
+      >
+        <div className=" ml-2 border border-primary rounded-full p-1 flex items-center justify-center">
+          {signal.call_type === "Pump" ? <TabletMedIcon /> : <MoonShotIcon />}
         </div>
         <span className="md:text-lg font-bold ml-5 md:ml-10">
-          {signal.call_type === "pump" ? "PUMP CALL" : "MOONSHOT CALL"}
+          {signal.call_type === "Pump" ? "PUMP CALL" : "MOONSHOT CALL"}
         </span>
       </div>
 
       {/* Signal Content */}
       <div className="md:text-lg flex flex-col">
         <p>
-          <span className="text-pink-500">☘️ ({signal.status}):</span>{" "}
-          <span className="text-green-500">${signal.symbol}</span> got{" "}
+          <span className="text-accentPink">☘️ ({signal.status}):</span>{" "}
+          <span className="text-primary">${signal.symbol}</span> got{" "}
           {signal.calls_received} more call
         </p>
         <p>From: {signal.source}</p>
         <p>⚡ Avg CPW: {signal.average_cdpv}</p>
         <p>Total calls: {signal.total_calls}</p>
 
-        <p className="text-[#00C2FF] my-4 break-words">
+        <p className=" text-accentBlue my-4 break-words">
           {signal.token_info.source}
         </p>
 
