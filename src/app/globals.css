@@ -1,3 +1,7 @@
+/* globals.css */
+@import "tailwindcss/tailwind.css";
+@import url("https://fonts.googleapis.com/css2?family=Nico+Moji:wght@400&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,6 +19,7 @@
 }
 
 body {
+  font-family: "Nico Moji", sans-serif;
 }
 
 @layer utilities {
@@ -22,6 +27,6 @@ body {
   }
 }
 
-.ant-tabs-tab{
-    background-color: "yellow";
+.ant-tabs-tab {
+  background-color: "yellow";
 }

@@ -1,11 +1,11 @@
 "use client";
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchTokens } from "@/lib/slices/userTokenSlice";
-import { fetchAlarms } from "@/lib/slices/userAlarmsSlice";
-import { fetchSignals } from "@/lib/slices/tradingSignalSlice";
+import AppBar from "@/components/AppBar";
 import TokenBoard from "@/components/TokenBoard";
-
+import { fetchSignals } from "@/lib/slices/tradingSignalSlice";
+import { fetchAlarms } from "@/lib/slices/userAlarmsSlice";
+import { fetchTokens } from "@/lib/slices/userTokenSlice";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -32,7 +32,9 @@ export default function Home() {
   }, [tokensStatus, alarmsStatus, signalsStatus, dispatch]);
 
   return (
-            <TokenBoard tokens={tokens} />
+    <div>
+      <AppBar />
+      <TokenBoard tokens={tokens} />
     </div>
   );
 }
