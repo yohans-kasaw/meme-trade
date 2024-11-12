@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchTokens, addToken } from "@/lib/slices/userTokenSlice";
 import { fetchAlarms } from "@/lib/slices/userAlarmsSlice";
 import { fetchSignals } from "@/lib/slices/tradingSignalSlice";
+import TokenItem from "@/components/TokenItem";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -37,6 +38,7 @@ export default function Home() {
 
   return (
     <div>
+      <TokenItem />
       <h1>Hello World</h1>
       <div className="flex flex-col items-center justify-center">
         <div className="flex flex-row items-center justify-center space-x-4">
