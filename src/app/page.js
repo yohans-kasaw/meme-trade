@@ -6,6 +6,7 @@ import { fetchAlarms } from "@/lib/slices/userAlarmsSlice";
 import { fetchSignals } from "@/lib/slices/tradingSignalSlice";
 import TokenBoard from "@/components/TokenBoard";
 
+
 export default function Home() {
   const dispatch = useDispatch();
 
@@ -31,7 +32,6 @@ export default function Home() {
   }, [tokensStatus, alarmsStatus, signalsStatus, dispatch]);
 
   return (
-    <div>
             <TokenBoard tokens={tokens} />
     </div>
   );
