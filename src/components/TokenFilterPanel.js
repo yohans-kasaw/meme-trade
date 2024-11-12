@@ -11,7 +11,7 @@ export function CountBadge({ count }) {
   );
 }
 
-function FilterButton({ children, gapClass = "gap-3", additionalClass = "" }) {
+export function FilterButton({ children, gapClass = "gap-3", additionalClass = "" }) {
   return (
     <div
       className={`flex flex-row justify-start items-center ${gapClass} bg-darkGray rounded-[6px] border-[1px] border-midGray py-0.5 ${additionalClass}`}
