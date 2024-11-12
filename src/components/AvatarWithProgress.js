@@ -60,7 +60,9 @@ const AvatarWithProgress = ({ imageUrl, progress, sourceLink }) => {
             borderWidth: "1px",
           }}
         >
-          <TabletMedIcon />
+          <a href={sourceLink}>
+            <TabletMedIcon />
+          </a>
         </Avatar>
       </div>
     </div>

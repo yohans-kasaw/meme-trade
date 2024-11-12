@@ -1,16 +1,14 @@
 "use client";
-import Image from "next/image";
-import { Button } from "antd";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchTokens, addToken } from "@/lib/slices/userTokenSlice";
+import { fetchTokens } from "@/lib/slices/userTokenSlice";
 import { fetchAlarms } from "@/lib/slices/userAlarmsSlice";
 import { fetchSignals } from "@/lib/slices/tradingSignalSlice";
 import TokenItem from "@/components/TokenItem";
 
 export default function Home() {
   const dispatch = useDispatch();
-  
+
   // Selectors for tokens, alarms, and signals
   const tokens = useSelector((state) => state.userTokens.items);
   const tokensStatus = useSelector((state) => state.userTokens.status);
