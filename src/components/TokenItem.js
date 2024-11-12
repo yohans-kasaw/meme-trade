@@ -2,6 +2,7 @@ import AvatarWithProgress from "./AvatarWithProgress";
 import VolumeDisplay from "../../public/svg_icons/volume_display.svg";
 
 import SolanaChainIcon from "../../public/svg_icons/Solana-chain.svg";
+import EthereumChainIcon from "../../public/svg_icons/Solana-chain.svg";
 import ChartLinkIcon from "../../public/svg_icons/chartLink.svg";
 
 import TokenTeleIcon from "../../public/svg_icons/tokentele_btn.svg";
@@ -32,25 +33,35 @@ import CtoIcon from "../../public/svg_icons/cto_icon.svg";
 
 import WarningIcon from "../../public/svg_icons/warningIcon.svg";
 
-const TokenItem = () => {
+const TokenItem = ({ token }) => {
+  const progress = parseFloat(token.bonding_curve_progress.replace('%', ''));
+  const chainIcon =
+    token.chain === "Ethereum" ? <EthereumChainIcon /> : <SolanaChainIcon />;
+
   return (
     <div>
-      <div className="flex flex-col gap-1 items-stretch text-white">
-        <div className="bg-midGray rounded-sm py-1">
+      <div className="flex flex-col gap-0.5 items-stretch text-white">
+        <div className="bg-darkGray rounded-sm py-1 pr-1">
           {/* Header */}
           <div className="flex flex-row">
             {/* ProfileSection */}
             <div className="flex flex-col pr-2 pl-1.5">
               <div className="flex-grow">
                 <AvatarWithProgress
-                  imageUrl="/images/meme_fallback.png"
-                  progress={55}
-                  sourceLink="https://github.com/yohansh/wicked-ape-challenge"
+                  imageUrl={token.external_links.image_link || "/images/meme_fallback.png"}
+                  progress={progress}
+                  sourceLink={token.source}
                 />
               </div>
               <div className="flex flex-row items-center justify-between h-full">
-                <SolanaChainIcon />
-                <ChartLinkIcon />
+                {chainIcon}
+                <a
+                  href={token.external_links.chart_link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <ChartLinkIcon />
+                </a>
               </div>
             </div>
 
@@ -60,37 +71,37 @@ const TokenItem = () => {
                 {/* SubContent */}
                 <div className="flex-grow flex flex-col gap-0.5">
                   <div className="flex flex-row justify-start gap-1 font-bold text-xs">
-                    <div>TRUMP</div>
-                    <div className="text-accentGreen w-20 truncate">
-                      TRUMP RAVEN long text to truncate
+                    <div>{token.token_ticker}</div>
+                    <div className="text-accentGreen w-14 truncate">
+                      {token.token_name}
                     </div>
                     <div className="flex flex-row items-center gap-0.5">
                       <CommentsIcon />
-                      36
+                      {token.comments_count}
                     </div>
                   </div>
                   <div className="flex flex-row justify-start gap-2 font-bold text-xs">
                     <div>
                       <div className="border border-accentBlue rounded px-0.5 text-accentBrightGreen">
-                        1s
+                        {token.time_from_creation}
                       </div>
                     </div>
                     <div className="flex flex-row items-center gap-0.5 text-accentPink">
-                      <PersonRichIcon /> 32%
+                      <PersonRichIcon /> {token.top_10_holders_percentage}
                     </div>
                     <div className="flex flex-row items-center gap-0.5 text-accentGreen">
-                      <MushroomIcon /> 99%
+                      <MushroomIcon /> {token.developer_percentage}
                     </div>
                   </div>
                   <div className="flex flex-row justify-start gap-2 font-bold text-xs">
                     <div className="flex flex-row items-center gap-0.5">
-                      <PeopleIcon /> 340
+                      <PeopleIcon /> {token.total_holders}
                     </div>
                     <div className="flex flex-row items-center gap-0.5">
-                      <PersonTickIcon /> 100
+                      <PersonTickIcon /> {token.unique_holders}
                     </div>
                     <div className="flex flex-row items-center gap-0.5 text-accentBrightGreen">
-                      <MCIcon /> $300K
+                      <MCIcon /> {token.market_cap}
                     </div>
                   </div>
                 </div>
@@ -104,10 +115,12 @@ const TokenItem = () => {
                       style={{
                         transform: "translate(50%, -50%)",
                         top: "50%",
-                        left: "10%",
+                        left: "0",
+                        width: "2.8rem",
+                        textAlign: "right",
                       }}
                     >
-                      200K
+                      {token.total_volume}
                     </div>
                   </div>
                 </div>
@@ -115,15 +128,47 @@ const TokenItem = () => {
               <div className="flex flex-row justify-between">
                 {/* First group */}
                 <div className="flex flex-row justify-start gap-1">
-                  <TokenXIcon />
-                  <TokenTeleIcon />
-                  <TokenWebIcon />
-                  <TokenSourceIcon />
+                  <a
+                    href={token.external_links.social_1 || '#'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={!token.external_links.social_1 ? 'hidden' : ''}
+                  >
+                    <TokenXIcon />
+                  </a>
+                  <a
+                    href={token.external_links.social_2 || '#'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={!token.external_links.social_2 ? 'hidden' : ''}
+                  >
+                    <TokenTeleIcon />
+                  </a>
+                  <a
+                    href={token.external_links.website || '#'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={!token.external_links.website ? 'hidden' : ''}
+                  >
+                    <TokenWebIcon />
+                  </a>
+                  <a
+                    href={token.source || '#'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={!token.source ? 'hidden' : ''}
+                  >
+                    <TokenSourceIcon />
+                  </a>
                 </div>
                 {/* Second group */}
                 <div className="flex flex-row gap-0.5 items-stretch">
-                  <AlarmIcon />
-                  <VelocityIcon />
+                  <div className={!token.user_alarm ? 'hidden' : ''}>
+                    <AlarmIcon />
+                  </div>
+                  <div className={!token.velocity ? 'hidden' : ''}>
+                    <VelocityIcon />
+                  </div>
                 </div>
               </div>
             </div>
@@ -131,22 +176,30 @@ const TokenItem = () => {
         </div>
 
         {/* Footer */}
-        <div className="flex flex-row justify-center gap-0.5 items-center bg-midGray rounded-sm px-1 py-1">
+        <div className="flex flex-row justify-center gap-0.5 items-center bg-darkGray rounded-sm px-1 py-1">
           <DevIcon />
           <div className="flex flex-row items-center gap-0.5 font-bold text-xs">
-            <StarVectorIcon /> 5/10
+            <StarVectorIcon /> {token.star_rating}/10
           </div>
           <GlassEmojiIcon />
           <div className="flex flex-row items-center gap-0.5 font-bold text-xs">
-            <WalletTickIcon /> 1000
+            <WalletTickIcon /> {token.insider_wallets_percentage}
           </div>
           <div className="flex flex-row items-center gap-0.5 font-bold text-xs">
-            <WarningIcon /> 50%
+            <WarningIcon /> {token.bonding_curve_progress}
           </div>
-          <DexIcon />
-          <AdsIcon />
-          <TrendIcon />
-          <CtoIcon />
+          <div className={token.DEX_status === "Listed" ? '' : 'hidden'}>
+            <DexIcon />
+          </div>
+          <div className={token.ADS_status === "Active" ? '' : 'hidden'}>
+            <AdsIcon />
+          </div>
+          <div className={token.trending_status === "Trending" ? '' : 'hidden'}>
+            <TrendIcon />
+          </div>
+          <div className={token.CTO_status === "Verified" ? '' : 'hidden'}>
+            <CtoIcon />
+          </div>
         </div>
       </div>
     </div>
