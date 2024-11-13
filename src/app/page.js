@@ -48,9 +48,7 @@ export default function Home() {
           // Handle the search term here
           console.log("Searching for:", searchTerm);
         }}
-        badgeCounts={
-          badgeCounts
-        }
+        badgeCounts={badgeCounts}
       />
       <SecondaryBar />
       <TokenBoard tokens={tokens} signals={signals} />

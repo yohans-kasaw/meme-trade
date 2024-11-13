@@ -32,11 +32,20 @@ import TrendIcon from "../../public/svg_icons/trend_icon.svg";
 import CtoIcon from "../../public/svg_icons/cto_icon.svg";
 
 import WarningIcon from "../../public/svg_icons/warningIcon.svg";
+import VelocityPopUp from "./VelocityPopUp";
+import { Popover } from "antd";
+import { useState } from "react";
 
 const TokenItem = ({ token }) => {
-  const progress = parseFloat(token.bonding_curve_progress.replace('%', ''));
+  const progress = parseFloat(token.bonding_curve_progress.replace("%", ""));
   const chainIcon =
     token.chain === "Ethereum" ? <EthereumChainIcon /> : <SolanaChainIcon />;
+
+  const [open, setOpen] = useState(false);
+
+  const handleOpenChange = (newOpen) => {
+    setOpen(newOpen);
+  };
 
   return (
     <div>
@@ -48,7 +57,10 @@ const TokenItem = ({ token }) => {
             <div className="flex flex-col pr-2 pl-1.5">
               <div className="flex-grow">
                 <AvatarWithProgress
-                  imageUrl={token.external_links.image_link || "/images/meme_fallback.png"}
+                  imageUrl={
+                    token.external_links.image_link ||
+                    "/images/meme_fallback.png"
+                  }
                   progress={progress}
                   sourceLink={token.source}
                 />
@@ -129,45 +141,56 @@ const TokenItem = ({ token }) => {
                 {/* First group */}
                 <div className="flex flex-row justify-start gap-1">
                   <a
-                    href={token.external_links.social_1 || '#'}
+                    href={token.external_links.social_1 || "#"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={!token.external_links.social_1 ? 'hidden' : ''}
+                    className={!token.external_links.social_1 ? "hidden" : ""}
                   >
                     <TokenXIcon />
                   </a>
                   <a
-                    href={token.external_links.social_2 || '#'}
+                    href={token.external_links.social_2 || "#"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={!token.external_links.social_2 ? 'hidden' : ''}
+                    className={!token.external_links.social_2 ? "hidden" : ""}
                   >
                     <TokenTeleIcon />
                   </a>
                   <a
-                    href={token.external_links.website || '#'}
+                    href={token.external_links.website || "#"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={!token.external_links.website ? 'hidden' : ''}
+                    className={!token.external_links.website ? "hidden" : ""}
                   >
                     <TokenWebIcon />
                   </a>
                   <a
-                    href={token.source || '#'}
+                    href={token.source || "#"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={!token.source ? 'hidden' : ''}
+                    className={!token.source ? "hidden" : ""}
                   >
                     <TokenSourceIcon />
                   </a>
                 </div>
                 {/* Second group */}
                 <div className="flex flex-row gap-0.5 items-stretch">
-                  <div className={!token.user_alarm ? 'hidden' : ''}>
+                  <div className={!token.user_alarm ? "hidden" : ""}>
                     <AlarmIcon />
                   </div>
-                  <div className={!token.velocity ? 'hidden' : ''}>
-                    <VelocityIcon />
+                  <div className={!token.velocity ? "hidden" : ""}>
+                    <Popover
+                      content={
+                        <VelocityPopUp velocity_model={token.velocity_model} />
+                      }
+                      trigger="click"
+                      open={open}
+                      onOpenChange={handleOpenChange}
+                      color="#1B1B1B"
+                      overlayClassName="velocity-custom-popover"
+                    >
+                      <VelocityIcon />
+                    </Popover>
                   </div>
                 </div>
               </div>
@@ -188,16 +211,16 @@ const TokenItem = ({ token }) => {
           <div className="flex flex-row items-center gap-0.5 font-bold text-xs">
             <WarningIcon /> {token.bonding_curve_progress}
           </div>
-          <div className={token.DEX_status === "Listed" ? '' : 'hidden'}>
+          <div className={token.DEX_status === "Listed" ? "" : "hidden"}>
             <DexIcon />
           </div>
-          <div className={token.ADS_status === "Active" ? '' : 'hidden'}>
+          <div className={token.ADS_status === "Active" ? "" : "hidden"}>
             <AdsIcon />
           </div>
-          <div className={token.trending_status === "Trending" ? '' : 'hidden'}>
+          <div className={token.trending_status === "Trending" ? "" : "hidden"}>
             <TrendIcon />
           </div>
-          <div className={token.CTO_status === "Verified" ? '' : 'hidden'}>
+          <div className={token.CTO_status === "Verified" ? "" : "hidden"}>
             <CtoIcon />
           </div>
         </div>

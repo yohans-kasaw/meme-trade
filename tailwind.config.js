@@ -20,6 +20,7 @@ module.exports = {
         darkGray: "#1B1B1B", // Dark gray for backgrounds or containers
         midGray: "#2F2E2E", // Mid-gray for UI elements or secondary backgrounds
         lightGray: "#343434",
+        midLightGray: "#888888", // Mid-light gray for text or secondary text
 
         accentGreen: "#44E19F", // Soft green for accents or highlights
         accentBlue: "#00C2FF", // Bright blue accent for links or CTAs
