@@ -1,7 +1,7 @@
 import { Badge } from "antd";
-import PumpIcon from "../../public/svg_icons/pump_icon.svg";
+import NotificationIcon from "../../public/svg_icons/notification_icon.svg";
 
-const PumpBadge = ({ count }) => {
+const PumpBadge  = ({ count }) => {
   return (
     <Badge
       count={count}
@@ -9,15 +9,16 @@ const PumpBadge = ({ count }) => {
         fontWeight: "bold",
         borderColor: "#000000",
         borderRadius: 5,
-        backgroundColor: "#00C2FF",
+        backgroundColor: "#CDD500",
         color: "#000000",
       }}
-      offset={[15, 10]}
+      offset={[15, 8]}
     >
-      {/* <Image src={PumpIcon} alt="Icon 3" width={24} height={24} /> */}
-      <PumpIcon />
+      {/* <Image src={NotificationIcon} alt="Icon 2" width={24} height={24} /> */}
+
+      <NotificationIcon />
     </Badge>
   );
 };
 
-export default PumpBadge;
+export default PumpBadge ;
