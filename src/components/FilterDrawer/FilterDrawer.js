@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { Button } from 'antd';
-import BooleanOptions from './BooleanOptions';
-import RealTimeRefreshRateSlider from './RealTimeRefreshRateSlider';
-import RangeOptions from './RangeOptions';
+import { useState } from "react";
+import { Button } from "antd";
+import BooleanOptions from "./BooleanOptions";
+import RealTimeRefreshRateSlider from "./RealTimeRefreshRateSlider";
+import RangeOptions from "./RangeOptions";
 
 const FilterDrawer = () => {
   const [filters, setFilters] = useState({
@@ -41,7 +41,7 @@ const FilterDrawer = () => {
 
   const handleApply = () => {
     // Implement the apply logic
-    console.log('Applying filters:', filters);
+    console.log("Applying filters:", filters);
   };
 
   const handleCancel = () => {
@@ -60,20 +60,20 @@ const FilterDrawer = () => {
   };
 
   return (
-    <div className="fixed right-0 top-10 w-1/4 h-full bg-darkGray text-white p-6 shadow-lg overflow-y-auto">
+    <div className="bg-darkGray text-white p-2 shadow-lg overflow-y-auto text-base">
       {/* Header */}
-      <div className="flex justify-between mb-4 border-b border-gray-600 pb-2">
-        <h3 className="text-sm">Token Filter</h3>
-        <div className="space-x-4">
+      <div className="flex justify-between items-end mb-4 border-b-2 border-accentMidGray pb-4 font-bold">
+        <h3 className="">Token Filters</h3>
+        <div className="">
           <Button
-            className="!text-white !text-sm"
+            className="!text-white !text-base !font-bold !text-[12px]"
             type="text"
             onClick={handleCancel}
           >
             Cancel
           </Button>
           <Button
-            className="!bg-primary text-white !text-sm px-2"
+            className="!bg-accentGreen !text-black !py-6 !text-[14px] !font-bold"
             type="primary"
             onClick={handleApply}
           >
@@ -84,14 +84,18 @@ const FilterDrawer = () => {
 
       {/* Filter Options */}
       <div className="space-y-4">
-        <BooleanOptions
-          booleanOptions={filters.booleanOptions}
-          onOptionChange={handleBooleanOptionChange}
-        />
+        <div className="border-b-2 border-accentMidGray pb-8">
+          <BooleanOptions
+            booleanOptions={filters.booleanOptions}
+            onOptionChange={handleBooleanOptionChange}
+          />
+        </div>
+        <div className="border-b-2 border-accentMidGray pb-4">
         <RealTimeRefreshRateSlider
           refreshRateIndex={filters.refreshRateIndex}
           onRefreshRateChange={handleRefreshRateChange}
         />
+        </div>
         <RangeOptions
           rangeOptions={filters.rangeOptions}
           onRangeOptionChange={handleRangeOptionChange}

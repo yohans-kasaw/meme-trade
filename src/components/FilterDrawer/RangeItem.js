@@ -10,22 +10,20 @@ const RangeItem = ({ label, values, onChange }) => {
   };
 
   return (
-    <div className="flex flex-col space-y-2 mb-4 w-3/4">
-      <label className="font-semibold text-xs">{label}</label>
-      <div className="flex space-x-2">
+    <div className="flex flex-col gap-2">
+      <label className=" font-bold text-base">{label}</label>
+      <div className="flex flex-row justify-between items-center gap-2">
         <input
-          type="number"
           placeholder="Min"
           value={values.minValue}
           onChange={handleMinChange}
-          className="w-full bg-black text-white rounded text-center text-xs"
+          className="w-full bg-black border-[1px] border-midGray  text-white rounded-[10px] py-2 font-bold text-base text-center"
         />
         <input
-          type="number"
           placeholder="Max"
           value={values.maxValue}
           onChange={handleMaxChange}
-          className="w-full bg-black text-white rounded text-center text-xs"
+          className="w-full bg-black text-white border-[1px] border-midGray rounded-[10px] py-2 font-bold text-base text-center"
         />
       </div>
     </div>
