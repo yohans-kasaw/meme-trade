@@ -26,3 +26,27 @@ body {
   .text-balance {
   }
 }
+
+
+
+/* Custom scrollbar styles for horizontal scrolling */
+.custom-scrollbar {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 16px; 
+
+}
+.custom-scrollbar::-webkit-scrollbar {
+  height: 8px; 
+
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:horizontal {
+  background-color: #44E19F;
+  border-radius: 6px; 
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent; 
+  border: 1px solid #44E19F;
+  border-radius: 6px; 
+}
