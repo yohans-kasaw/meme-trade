@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import FilterDrawer from "@/components/FilterDrawer/FilterDrawer";
 
-import AlertManager from "@/components/AlertManager";
+import AlertManager from "@/components/AlertDrawer/AlertManager";
 export default function Home() {
   const dispatch = useDispatch();
 
@@ -56,32 +56,6 @@ export default function Home() {
       <SecondaryBar />
       <TokenBoard tokens={tokens} signals={signals} />
       <AlertManager />
-      {/* <div className="bg-white">
-        <AlarmCard
-          title="TRUMP RAVE"
-          type="Market Cap"
-          condition="DOWN MORE THAN"
-          amount={1000000000}
-          percentage={50}
-          status="Triggered"
-          createdTime="3 minutes"
-          onEdit={() => alert("Edit Alarm")}
-          onRefresh={() => alert("Refresh Alarm")}
-          onDelete={() => alert("Delete Alarm")}
-        />
-        <AlarmCard
-          title="TRUMP RAVE"
-          type="Market Cap"
-          condition="UP MORE THAN"
-          amount={1000000000}
-          percentage={50}
-          status="Active"
-          createdTime="3 minutes"
-          onEdit={() => alert("Edit Alarm")}
-          onRefresh={() => alert("Refresh Alarm")}
-          onDelete={() => alert("Delete Alarm")}
-        />
-      </div> */}
     </div>
   );
 }

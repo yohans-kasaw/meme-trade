@@ -1,10 +1,10 @@
 import React from "react";
-import AlarmIcon from "../../public/svg_icons/alarm_btn.svg";
-import RefreshIcon from "../../public/svg_icons/refresh_icon.svg";
-import EditIcon from "../../public/svg_icons/edit_icon.svg";
-import DeleteIcon from "../../public/svg_icons/delete_icon.svg";
-import TriggeredIcon from "../../public/svg_icons/alarm_icon_pink.svg";
-import ActiveIcon from "../../public/svg_icons/alarm_icon_green.svg";
+import AlarmIcon from "../../../public/svg_icons/alarm_btn.svg";
+import RefreshIcon from "../../../public/svg_icons/refresh_icon.svg";
+import EditIcon from "../../../public/svg_icons/edit_icon.svg";
+import DeleteIcon from "../../../public/svg_icons/delete_icon.svg";
+import TriggeredIcon from "../../../public/svg_icons/alarm_icon_pink.svg";
+import ActiveIcon from "../../../public/svg_icons/alarm_icon_green.svg";
 
 const AlarmCard = ({
   title,
@@ -28,7 +28,7 @@ const AlarmCard = ({
           {/* <AlarmIcon className="w-5 h-5" /> */}
           <h3 className="font-bold text-sm">{title}</h3>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           <button onClick={onEdit} className="hover:text-accentGreen">
             <EditIcon />
           </button>

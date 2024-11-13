@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Select, Input, Button } from "antd";
 
-import AlarmIcon from "../../public/svg_icons/alarm_btn.svg";
+import AlarmIcon from "../../../public/svg_icons/alarm-icon-white.svg";
 import AlertCard from "./AlertCard";
 import "antd/dist/reset.css";
 
@@ -11,7 +11,7 @@ const AlarmManager = () => {
   const [type, setType] = useState("Market Cap");
   const [movement, setMovement] = useState("Down More Than");
   const [amount, setAmount] = useState("");
-  const [percentage, setPercentage] = useState("");
+  const [percentage, setPercentage] = useState("0");
   const [alarms, setAlarms] = useState([]);
 
   // Handle form submission
@@ -45,38 +45,49 @@ const AlarmManager = () => {
   return (
     <div className="bg-darkGray text-white shadow-md lg:max-w-[30%]">
       {/* Form Section */}
-      <div className="flex items-center justify-between border-b border-white">
+      <div className="flex items-center justify-between border-b-2 border-accentMidGray">
         <div className="flex items-end w-1/2 bg-[#006F9280] py-4 px-2">
-          <h2 className="text-xl font-bold mr-2">Alarms</h2>
-          <AlarmIcon />
+          <h2 className="flex gap-2 text-xl font-bold mr-2">
+            Alarms{" "}
+            <span>
+              <AlarmIcon />
+            </span>
+          </h2>
         </div>
 
         <div className="flex justify-center items-center w-1/2 space-x-2 h-full">
-          <Button onClick={clearForm} type="text" style={{ color: "white" }}>
+          <Button
+            onClick={clearForm}
+            type="text"
+            size="large"
+            className="!text-white !text-base !font-bold !text-[12px] w-2/5 h-[80%]"
+          >
             Cancel
           </Button>
           <Button
             onClick={handleAddAlarm}
-            style={{ backgroundColor: "green", color: "white" }}
+            className="!bg-primary   !text-white !py-4 px-8 !text-[14px] !font-bold w-2/5 h-[80%]"
+            size="large"
           >
             Apply
           </Button>
         </div>
       </div>
 
+      {/* Header */}
+
       <div className="mb-6 p-4 border-b border-white">
         {/* Form Row */}
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex flex-col md:flex-row justify-between mb-4 w-full">
           {/* Type and Movement Selectors */}
           <div className="flex flex-col items-center gap-6">
             {/* Type Select */}
-            <div>
+            <div className="w-full">
               <label className="block  mb-1">Type</label>
               <Select
                 value={type}
                 onChange={setType}
-                style={{ width: "200px" }}
-                className="custom-select"
+                className="custom-select w-full"
                 dropdownClassName="custom-select-dropdown"
               >
                 <Option value="Market Cap">Market Cap</Option>
@@ -85,13 +96,12 @@ const AlarmManager = () => {
             </div>
 
             {/* Movement Select */}
-            <div>
+            <div className="w-full">
               <label className="block  mb-1">Movement</label>
               <Select
                 value={movement}
                 onChange={setMovement}
-                style={{ width: "200px" }}
-                className="custom-select"
+                className="custom-select w-full"
                 dropdownClassName="custom-select-dropdown"
               >
                 <Option value="Goes Over">Goes Over</Option>
@@ -102,12 +112,12 @@ const AlarmManager = () => {
             </div>
           </div>
 
-          {/* Additional Info on the Right */}
-          <div className="flex flex-col items-center">
+          {/* Token Info */}
+          <div className="flex flex-col md:items-center md:justify-center w-full mt-4">
             {/* Main text */}
             <span className="font-bold ">TRUMP TRUMP RAVE...</span>
             {/* Badge */}
-            <div className="flex gap-2 px-1 py-1.5 justify-center items-center">
+            <div className="flex gap-2 px-1 py-1.5 md:justify-center md:items-center w-full">
               <span className="border border-accentBlue text-accentLime rounded-lg p-0.5">
                 1s
               </span>
@@ -175,7 +185,7 @@ const AlarmManager = () => {
       </div>
 
       {/* Alarms List */}
-      <div className="flex flex-col gap-4 p-2 max-h-screen overflow-auto">
+      <div className="flex flex-col gap-4 p-2 max-h-screen overflow-auto velocity-custom-scrollbar">
         {alarms.map((alarm, index) => (
           <AlertCard
             key={index}
@@ -196,44 +206,44 @@ const AlarmManager = () => {
       {/* Custom Styles for Dropdown and Inputs */}
       <style>
         {`
-          /* Style for the Select component */
-          .custom-select .ant-select-selector {
-            background-color: black !important;
-            color: white !important;
-            border: 1px solid #444 !important;
-          }
-          .custom-select .ant-select-selection-item {
-            color: white !important;
-          }
-          .custom-select .ant-select-arrow {
-            color: white !important;
-          }
+            /* Style for the Select component */
+            .custom-select .ant-select-selector {
+              background-color: black !important;
+              color: white !important;
+              border: 1px solid #444 !important;
+            }
+            .custom-select .ant-select-selection-item {
+              color: white !important;
+            }
+            .custom-select .ant-select-arrow {
+              color: white !important;
+            }
 
-          /* Style for the Dropdown Popup */
-          .custom-select-dropdown {
-            background-color: black !important;
-            padding: 10px !important;
-          }
-          .custom-select-dropdown .ant-select-item-option {
-            background-color: #006F92 !important;
-            color: white !important;
-            margin: 5px 0 !important;
-            border-radius: 4px;
-          }
-          .custom-select-dropdown .ant-select-item-option-active {
-            background-color: #005bb5 !important;
-          }
-          .custom-select-dropdown .ant-select-item-option-selected {
-            background-color: #005bb5 !important;
-          }
+            /* Style for the Dropdown Popup */
+            .custom-select-dropdown {
+              background-color: black !important;
+              padding: 10px !important;
+            }
+            .custom-select-dropdown .ant-select-item-option {
+              background-color: #006F92 !important;
+              color: white !important;
+              margin: 5px 0 !important;
+              border-radius: 4px;
+            }
+            .custom-select-dropdown .ant-select-item-option-active {
+              background-color: #005bb5 !important;
+            }
+            .custom-select-dropdown .ant-select-item-option-selected {
+              background-color: #005bb5 !important;
+            }
 
-          /* Adjusting the option height */
-          .custom-select-dropdown .ant-select-item-option {
-            height: auto !important;
-            line-height: normal !important;
-            padding: 8px 12px !important;
-          }
-        `}
+            /* Adjusting the option height */
+            .custom-select-dropdown .ant-select-item-option {
+              height: auto !important;
+              line-height: normal !important;
+              padding: 8px 12px !important;
+            }
+          `}
       </style>
     </div>
   );
