@@ -3,7 +3,7 @@ import FireIcon from "../../public/svg_icons/fire_icon.svg";
 
 const FireCallBadge = ({ count }) => {
   return (
-    <div className="flex items-center space-x-8 w-1/6">
+    <div className="flex items-center space-x-6 w-1/6">
       <Badge
         count={count}
         style={{

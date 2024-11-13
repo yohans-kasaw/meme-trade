@@ -17,6 +17,14 @@ export default function Home() {
   const signals = useSelector((state) => state.tradingSignals.items);
   const signalsStatus = useSelector((state) => state.tradingSignals.status);
 
+  // bagdeCounts
+  const badgeCounts = {
+    fireCall: tokens.reduce((acc, token) => acc + (token.alert ? 1 : 0), 0),
+    signalsCount: signals.length,
+    pump: tokens.reduce((acc, token) => acc + (token.pump_fun ? 1 : 0), 0),
+    message: tokens.reduce((acc, token) => acc + (token.user_alarm ? 1 : 0), 0),
+  };
+
   // Fetch tokens, alarms, and signals when each status is "idle"
   useEffect(() => {
     if (tokensStatus === "idle") {
@@ -32,7 +40,16 @@ export default function Home() {
 
   return (
     <div>
-      {/* <AppBar />
+      <AppBar
+        user={{ profile_picture: "/images/profile_avatar_fallback.jpg" }}
+        onSearch={(searchTerm) => {
+          // Handle the search term here
+          console.log("Searching for:", searchTerm);
+        }}
+        badgeCounts={
+          badgeCounts
+        }
+      />
       <SecondaryBar />
       <TokenBoard tokens={tokens} signals={signals} /> */}
       <ListOrderPanel />
