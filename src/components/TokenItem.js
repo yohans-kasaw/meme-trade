@@ -187,6 +187,7 @@ const TokenItem = ({ token }) => {
                       open={open}
                       onOpenChange={handleOpenChange}
                       color="#1B1B1B"
+                      overlayClassName="velocity-custom-popover"
                     >
                       <VelocityIcon />
                     </Popover>

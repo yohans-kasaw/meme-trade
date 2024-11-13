@@ -53,8 +53,8 @@ function VelocityPopUp({ velocity_model }) {
 
       <div className="flex flex-row items-start font-bold mt-5">
         {/* RealTime Content */}
-        <div className="p-1 mr-1 bg-darkGray rounded-md border border-secondary">
-          <div className="mb-2 justify-center items-center">Real Time</div>
+        <div className="flex flex-col justify-center items-stretch p-1 mr-1 bg-darkGray rounded-md border border-secondary">
+          <p className="flex justify-center mb-2 w-16">Real Time</p>
           <div className="flex flex-col items-center mb-1">
             <div className="text-midLightGray">TXNS</div>
             <div className="">{real_time.transactions}</div>

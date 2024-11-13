@@ -28,6 +28,11 @@ body {
 }
 
 
+.velocity-custom-popover {
+  box-shadow: 0px 4px 20px #2F2E2E; 
+  border: 1px solid #2F2E2E; 
+  border-radius: 8px; 
+}
 
 /* Custom scrollbar styles for horizontal scrolling */
 .velocity-custom-scrollbar {
