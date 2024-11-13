@@ -2,12 +2,13 @@
 import AppBar from "@/components/AppBar";
 import SecondaryBar from "@/components/SecondaryBar";
 import TokenBoard from "@/components/TokenBoard";
-import TokenFilterBar from "@/components/TokenFilter";
 import { fetchSignals } from "@/lib/slices/tradingSignalSlice";
 import { fetchAlarms } from "@/lib/slices/userAlarmsSlice";
 import { fetchTokens } from "@/lib/slices/userTokenSlice";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
+import FilterDrawer from "@/components/FilterDrawer/FilterDrawer";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -53,7 +54,7 @@ export default function Home() {
       />
       <SecondaryBar />
       <TokenBoard tokens={tokens} signals={signals} />
-      <TokenFilterBar />
+      <FilterDrawer />
     </div>
   );
 }
