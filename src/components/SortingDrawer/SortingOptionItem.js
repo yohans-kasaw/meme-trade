@@ -1,6 +1,6 @@
+// SortingOptionItem.jsx
 import PropTypes from "prop-types";
 import { Checkbox, ConfigProvider } from "antd";
-
 import DecreasePyramid from "../../../public/svg_icons/decrease_icon.svg";
 import IncreasePyramid from "../../../public/svg_icons/increase_icon.svg";
 
@@ -17,14 +17,14 @@ const SortingOptionItem = ({ option, onOptionChange }) => {
 
   return (
     <div className="flex flex-col justify-start items-start gap-1">
-      <label className="text-white text-xs">{label}</label>
+      <label className="text-white">{label}</label>
       <div className="flex items-center ml-2 gap-2">
         <ConfigProvider
           theme={{
             token: {
-              colorPrimary: "#00b96b", // Green color for checked state
-              colorBgContainer: "#000000", // Black background for checked state
-              colorBorder: "#000000", // Black border for checked state
+              colorPrimary: "#00b96b",
+              colorBgContainer: "#000000",
+              colorBorder: "#000000",
             },
           }}
         >
@@ -32,10 +32,9 @@ const SortingOptionItem = ({ option, onOptionChange }) => {
             checked={selected}
             onChange={handleCheckboxChange}
             aria-label={`Select ${label}`}
-            className="scale-[2.5]"
+            className="scale-250"
           />
         </ConfigProvider>
-
         <div
           className="cursor-pointer pl-3"
           onClick={toggleOrder}

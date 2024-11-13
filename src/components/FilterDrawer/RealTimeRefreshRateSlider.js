@@ -1,18 +1,6 @@
+// RealTimeRefreshRateSlider.jsx
 import { Slider } from "antd";
-
-const refreshRates = [
-  { label: "1s", value: 1 },
-  { label: "30s", value: 30 },
-  { label: "1m", value: 60 },
-  { label: "3m", value: 180 },
-  { label: "5m", value: 300 },
-  { label: "15m", value: 900 },
-  { label: "30m", value: 1800 },
-  { label: "1h", value: 3600 },
-  { label: "2h", value: 7200 },
-  { label: "4h", value: 14400 },
-  { label: "24h", value: 86400 },
-];
+import { refreshRates } from "../../lib/constants";
 
 const RealTimeRefreshRateSlider = ({
   refreshRateIndex,
@@ -20,9 +8,9 @@ const RealTimeRefreshRateSlider = ({
 }) => {
   return (
     <div className="flex flex-col items-center text-white space-y-2 w-full">
-      <h3 className="text-center text-sm font-semibold text-base pb-5">
+      <div className="text-center font-semibold pb-5">
         Real Time Refresh Rate
-      </h3>
+      </div>
       <Slider
         className="w-full"
         min={0}
@@ -31,10 +19,14 @@ const RealTimeRefreshRateSlider = ({
         value={refreshRateIndex}
         onChange={onRefreshRateChange}
         tooltip={{
-          formatter: (value) => (<b className="bg-black-900 text-base p-2">{refreshRates[value].label}</b>),
+          formatter: (value) => (
+            <b className="bg-black-900 p-2">
+              {refreshRates[value].label}
+            </b>
+          ),
         }}
-        trackStyle={{ backgroundColor: "#22c55e", height: 12 }} // Adjust height for the green track
-        railStyle={{ backgroundColor: "#000000", height: 12 }} // Adjust height for the black rail
+        trackStyle={{ backgroundColor: "#22c55e", height: 12 }}
+        railStyle={{ backgroundColor: "#000000", height: 12 }}
         handleStyle={{
           borderColor: "#000000",
           backgroundColor: "#000000",
@@ -46,7 +38,7 @@ const RealTimeRefreshRateSlider = ({
           overflow: "hidden",
         }}
       />
-      <div className="text-base font-bold pt-8 pb-2">
+      <div className="font-bold pt-8 pb-2">
         Selected Refresh Rate: {refreshRates[refreshRateIndex].label}
       </div>
     </div>
