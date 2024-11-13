@@ -8,7 +8,6 @@ import { fetchTokens } from "@/lib/slices/userTokenSlice";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import FilterDrawer from "@/components/FilterDrawer/FilterDrawer";
 
 export default function Home() {
   const dispatch = useDispatch();

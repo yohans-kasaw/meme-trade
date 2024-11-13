@@ -64,16 +64,16 @@ const FilterDrawer = () => {
       {/* Header */}
       <div className="flex justify-between items-end mb-4 border-b-2 border-accentMidGray pb-4 font-bold">
         <h3 className="">Token Filters</h3>
-        <div className="">
+        <div className="flex gap-2 items-center">
           <Button
-            className="!text-white !text-base !font-bold !text-[12px]"
+            className="!text-white !text-base !text-[12px]"
             type="text"
             onClick={handleCancel}
           >
             Cancel
           </Button>
           <Button
-            className="!bg-accentGreen !text-black !py-6 !text-[14px] !font-bold"
+            className="!bg-green-700 !text-white !py-4 !px-6 !text-[14px] !font-bold"
             type="primary"
             onClick={handleApply}
           >
