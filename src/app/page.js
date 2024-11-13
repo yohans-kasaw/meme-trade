@@ -51,7 +51,7 @@ export default function Home() {
         }
       />
       <SecondaryBar />
-      <TokenBoard tokens={tokens} signals={signals} /> */}
+      <TokenBoard tokens={tokens} signals={signals} />
       <ListOrderPanel />
     </div>
   );
