@@ -30,22 +30,22 @@ body {
 
 
 /* Custom scrollbar styles for horizontal scrolling */
-.custom-scrollbar {
+.velocity-custom-scrollbar {
   overflow-x: auto;
   white-space: nowrap;
-  padding-bottom: 16px; 
+  padding-bottom: 10px; 
 
 }
-.custom-scrollbar::-webkit-scrollbar {
-  height: 8px; 
+.velocity-custom-scrollbar::-webkit-scrollbar {
+  height: 4px; 
 
 }
-.custom-scrollbar::-webkit-scrollbar-thumb:horizontal {
+.velocity-custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #44E19F;
   border-radius: 6px; 
 }
 
-.custom-scrollbar::-webkit-scrollbar-track {
+.velocity-custom-scrollbar::-webkit-scrollbar-track {
   background-color: transparent; 
   border: 1px solid #44E19F;
   border-radius: 6px; 
