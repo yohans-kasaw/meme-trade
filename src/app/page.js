@@ -1,7 +1,5 @@
 "use client";
-import AppBar from "@/components/AppBar";
-import SecondaryBar from "@/components/SecondaryBar";
-import TokenBoard from "@/components/TokenBoard";
+import ListOrderPanel from "@/components/ListOrder";
 import { fetchSignals } from "@/lib/slices/tradingSignalSlice";
 import { fetchAlarms } from "@/lib/slices/userAlarmsSlice";
 import { fetchTokens } from "@/lib/slices/userTokenSlice";
@@ -34,9 +32,10 @@ export default function Home() {
 
   return (
     <div>
-      <AppBar />
+      {/* <AppBar />
       <SecondaryBar />
-      <TokenBoard tokens={tokens} signals={signals} />
+      <TokenBoard tokens={tokens} signals={signals} /> */}
+      <ListOrderPanel />
     </div>
   );
 }
