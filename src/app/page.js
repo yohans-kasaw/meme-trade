@@ -55,7 +55,6 @@ export default function Home() {
       />
       <SecondaryBar />
       <TokenBoard tokens={tokens} signals={signals} />
-      <AlertManager />
     </div>
   );
 }
