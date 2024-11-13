@@ -4,7 +4,7 @@ import RealTimeRefreshRateSlider from "./RealTimeRefreshRateSlider";
 import TokenFilterTokenOption from "./TokenFilterTokenOption";
 import TokenFilterTopTenOption from "./TokenFilterTopTenOption";
 
-const TokenFilterPanel = () => {
+const TokenFilterBar = () => {
   return (
     <div className="fixed right-0 top-10 w-1/4 h-full bg-darkGray text-white p-6 shadow-lg overflow-y-auto">
       {/* Top right buttons */}
@@ -54,4 +54,4 @@ const TokenFilterPanel = () => {
   );
 };
 
-export default TokenFilterPanel;
+export default TokenFilterBar;

@@ -1,5 +1,8 @@
 "use client";
-import ListOrderPanel from "@/components/ListOrder";
+import AppBar from "@/components/AppBar";
+import SecondaryBar from "@/components/SecondaryBar";
+import TokenBoard from "@/components/TokenBoard";
+import TokenFilterBar from "@/components/TokenFilter";
 import { fetchSignals } from "@/lib/slices/tradingSignalSlice";
 import { fetchAlarms } from "@/lib/slices/userAlarmsSlice";
 import { fetchTokens } from "@/lib/slices/userTokenSlice";
@@ -46,13 +49,11 @@ export default function Home() {
           // Handle the search term here
           console.log("Searching for:", searchTerm);
         }}
-        badgeCounts={
-          badgeCounts
-        }
+        badgeCounts={badgeCounts}
       />
       <SecondaryBar />
       <TokenBoard tokens={tokens} signals={signals} />
-      <ListOrderPanel />
+      <TokenFilterBar />
     </div>
   );
 }

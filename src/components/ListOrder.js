@@ -1,6 +1,6 @@
 import OrderStatus from "./OrderStatus";
 
-const ListOrderPanel = () => {
+const ListOrderBar = () => {
   return (
     <div className="fixed right-0 top-10 w-1/4 h-full bg-darkGray text-white p-6 shadow-lg overflow-y-auto">
       <div className="flex justify-between space-x-4 mb-2 border-b border-gray-600 pb-2">
@@ -25,4 +25,4 @@ const ListOrderPanel = () => {
   );
 };
 
-export default ListOrderPanel;
+export default ListOrderBar;
