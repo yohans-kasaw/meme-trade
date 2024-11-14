@@ -11,7 +11,7 @@ const AvatarWithProgress = ({ imageUrl, progress, sourceLink }) => {
       <Progress
         type="circle"
         percent={progress}
-        width={size + 5} // adjust width to your needs
+        size={size + 5}
         strokeColor="#36ff62"
         trailColor="#2b382e"
         format={() => ""}

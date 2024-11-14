@@ -248,8 +248,8 @@ const TokenItem = ({ token }) => {
         placement={isLargeScreen ? "right":"bottom"}
         closable={false}
         onClose={onCloseAlarmDrawer}
-        visible={isAlarmDrawerVisible}
-        bodyStyle={{ padding: 0 }}
+        open={isAlarmDrawerVisible}
+        style={{ padding: 0 }}
         height="90%"
         maskClosable={true}
       >

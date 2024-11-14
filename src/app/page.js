@@ -1,6 +1,5 @@
 "use client";
 import AppBar from "@/components/AppBar/AppBar";
-import SecondaryBar from "@/components/AppBar/SecondaryBar";
 import TokenBoard from "@/components/DashBoard/TokenBoard";
 import { fetchSignals } from "@/lib/slices/tradingSignalSlice";
 import { fetchAlarms } from "@/lib/slices/userAlarmsSlice";

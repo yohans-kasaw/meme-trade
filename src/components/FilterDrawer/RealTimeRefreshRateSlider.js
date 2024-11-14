@@ -1,6 +1,7 @@
 // RealTimeRefreshRateSlider.jsx
-import { Slider } from "antd";
+import { Slider, ConfigProvider } from "antd";
 import { refreshRates } from "@/lib/constants";
+import { tailwindColors } from "@/lib/colors";
 
 const RealTimeRefreshRateSlider = ({
   refreshRateIndex,
@@ -11,33 +12,36 @@ const RealTimeRefreshRateSlider = ({
       <div className="text-center font-semibold pb-3">
         Real Time Refresh Rate
       </div>
-      <Slider
-        className="w-full"
-        min={0}
-        max={refreshRates.length - 1}
-        step={1}
-        value={refreshRateIndex}
-        onChange={onRefreshRateChange}
-        tooltip={{
-          formatter: (value) => (
-            <b className="bg-black-900 p-2">
-              {refreshRates[value].label}
-            </b>
-          ),
+      <ConfigProvider
+        theme={{
+          components: {
+            Slider: {
+              railSize: 6,
+              trackBg: tailwindColors.accentGreen,
+              railBg: tailwindColors.midGray,
+              handleSize: 20,
+              handleColor: tailwindColors.accentGreen,
+              dotActiveBorderColor: tailwindColors.accentGreen,
+              handleActiveOutlineColor: tailwindColors.accentGreen,
+              dotBorderColor: tailwindColors.primaryBlack,
+            },
+          },
         }}
-        trackStyle={{ backgroundColor: "#22c55e", height: 8 }}
-        railStyle={{ backgroundColor: "#000000", height: 8 }}
-        handleStyle={{
-          borderColor: "#000000",
-          backgroundColor: "#000000",
-          transform: "translateY(-25%)",
-          borderWidth: 15,
-          borderRadius: "50%",
-          width: 15,
-          height: 15,
-          overflow: "hidden",
-        }}
-      />
+      >
+        <Slider
+          className="custom-slider w-full"
+          min={0}
+          max={refreshRates.length - 1}
+          step={1}
+          value={refreshRateIndex}
+          onChange={onRefreshRateChange}
+          tooltip={{
+            formatter: (value) => (
+              <b className="bg-black-900 p-2">{refreshRates[value].label}</b>
+            ),
+          }}
+        />
+      </ConfigProvider>
       <div className="font-bold pb-6">
         Selected Refresh Rate: {refreshRates[refreshRateIndex].label}
       </div>

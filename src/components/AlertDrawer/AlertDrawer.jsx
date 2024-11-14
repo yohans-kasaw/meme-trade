@@ -80,15 +80,15 @@ const AlertDrawer = () => {
         {/* Form Row */}
         <div className="flex flex-col md:flex-row justify-between mb-4 w-full">
           {/* Type and Movement Selectors */}
-          <div className="flex flex-col items-center gap-6">
+          <div className="flex flex-col items-start gap-6">
             {/* Type Select */}
-            <div className="w-full">
+            <div className="w-40">
               <label className="block  mb-1">Type</label>
               <Select
                 value={type}
                 onChange={setType}
                 className="custom-select w-full"
-                dropdownClassName="custom-select-dropdown"
+                popupClassName="custom-select-dropdown"
               >
                 <Option value="Market Cap">Market Cap</Option>
                 <Option value="Volume">Volume</Option>
@@ -96,13 +96,13 @@ const AlertDrawer = () => {
             </div>
 
             {/* Movement Select */}
-            <div className="w-full">
+            <div className="w-40">
               <label className="block  mb-1">Movement</label>
               <Select
                 value={movement}
                 onChange={setMovement}
                 className="custom-select w-full"
-                dropdownClassName="custom-select-dropdown"
+                popupClassName="custom-select-dropdown"
               >
                 <Option value="Goes Over">Goes Over</Option>
                 <Option value="Goes Under">Goes Under</Option>
