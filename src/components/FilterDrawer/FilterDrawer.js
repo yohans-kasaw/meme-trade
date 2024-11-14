@@ -53,20 +53,20 @@ const FilterDrawer = () => {
   };
 
   return (
-    <div className="bg-darkGray text-white p-2 shadow-lg overflow-y-auto text-xs">
+    <div className="bg-darkGray text-white p-2 px-6 shadow-lg overflow-y-auto text-xs">
       <DrawerHeader
         title="Token Filters"
         onApply={handleApply}
         onCancel={handleCancel}
       />
       <div className="space-y-4">
-        <div className="border-b-2 border-accentMidGray pb-8">
+        <div className="border-b-[1px] border-midGray pb-4">
           <BooleanOptions
             booleanOptions={filters.booleanOptions}
             onOptionChange={handleBooleanOptionChange}
           />
         </div>
-        <div className="border-b-2 border-accentMidGray pb-4">
+        <div className="border-b-[1px] border-midGray pb-1">
           <RealTimeRefreshRateSlider
             refreshRateIndex={filters.refreshRateIndex}
             onRefreshRateChange={handleRefreshRateChange}

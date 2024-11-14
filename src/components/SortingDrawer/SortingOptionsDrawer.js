@@ -35,7 +35,7 @@ const SortingOptionsDrawer = ({ onChange }) => {
   };
 
   return (
-    <div className="bg-darkGray text-white p-6 shadow-lg overflow-y-auto">
+    <div className="bg-darkGray h-full text-white p-6 shadow-lg overflow-y-auto">
       <DrawerHeader
         title="Sorting Options"
         onApply={handleApply}

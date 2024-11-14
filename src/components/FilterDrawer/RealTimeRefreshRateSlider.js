@@ -7,8 +7,8 @@ const RealTimeRefreshRateSlider = ({
   onRefreshRateChange,
 }) => {
   return (
-    <div className="flex flex-col items-center text-white space-y-2 w-full">
-      <div className="text-center font-semibold pb-5">
+    <div className="flex flex-col items-center text-white w-full">
+      <div className="text-center font-semibold pb-3">
         Real Time Refresh Rate
       </div>
       <Slider
@@ -25,20 +25,20 @@ const RealTimeRefreshRateSlider = ({
             </b>
           ),
         }}
-        trackStyle={{ backgroundColor: "#22c55e", height: 12 }}
-        railStyle={{ backgroundColor: "#000000", height: 12 }}
+        trackStyle={{ backgroundColor: "#22c55e", height: 8 }}
+        railStyle={{ backgroundColor: "#000000", height: 8 }}
         handleStyle={{
           borderColor: "#000000",
           backgroundColor: "#000000",
           transform: "translateY(-25%)",
-          borderWidth: 20,
+          borderWidth: 15,
           borderRadius: "50%",
-          width: 35,
-          height: 35,
+          width: 15,
+          height: 15,
           overflow: "hidden",
         }}
       />
-      <div className="font-bold pt-8 pb-2">
+      <div className="font-bold pb-6">
         Selected Refresh Rate: {refreshRates[refreshRateIndex].label}
       </div>
     </div>
