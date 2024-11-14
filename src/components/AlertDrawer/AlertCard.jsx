@@ -26,7 +26,7 @@ const AlarmCard = ({
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           {/* <AlarmIcon className="w-5 h-5" /> */}
-          <h3 className="font-bold text-sm">{title}</h3>
+          <h3 className="font-bold text-xs">{title}</h3>
         </div>
         <div className="flex items-center gap-3">
           <button onClick={onEdit} className="hover:text-accentGreen">
@@ -43,15 +43,15 @@ const AlarmCard = ({
 
       {/* Content */}
       <div>
-        <p className="text-sm mb-1 font-semibold">
+        <p className="text-xs mb-1 font-semibold">
           Alert me when: <span className="text-accentLime">{type}</span>
         </p>
         <p
-          className={`text-lg font-bold ${
+          className={`text-xs font-bold ${
             condition.includes("Down") ? "text-accentPink" : "text-accentGreen"
           }`}
         >
-          goes {condition}{" "}
+          goes {condition.toUpperCase()}{" "}
           <span className="text-white">
             {amount.toLocaleString()} or {percentage}%
           </span>
@@ -59,7 +59,7 @@ const AlarmCard = ({
       </div>
 
       {/* Footer */}
-      <div className="flex items-center justify-end pt-2 text-sm font-semibold gap-3">
+      <div className="flex items-center justify-end pt-2 text-xs font-semibold gap-3">
         <div>
           <span className="text-grayText">Created </span>
           <span> {createdTime} ago</span>

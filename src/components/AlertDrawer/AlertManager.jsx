@@ -76,7 +76,7 @@ const AlarmManager = () => {
 
       {/* Header */}
 
-      <div className="mb-6 p-4 border-b border-white">
+      <div className="mb-6 p-4 border-b border-white text-xs">
         {/* Form Row */}
         <div className="flex flex-col md:flex-row justify-between mb-4 w-full">
           {/* Type and Movement Selectors */}
@@ -111,31 +111,13 @@ const AlarmManager = () => {
               </Select>
             </div>
           </div>
-
-          {/* Token Info */}
-          <div className="flex flex-col md:items-center md:justify-center w-full mt-4">
-            {/* Main text */}
-            <span className="font-bold ">TRUMP TRUMP RAVE...</span>
-            {/* Badge */}
-            <div className="flex gap-2 px-1 py-1.5 md:justify-center md:items-center w-full">
-              <span className="border border-accentBlue text-accentLime rounded-lg p-0.5">
-                1s
-              </span>
-              {/* Volume and Market Cap */}
-              <span className="text-grayText">V</span>
-              <span className="text-accentBlue">$220K</span>
-              <span className="text-grayText">MC</span>
-              <span className="text-accentLime">$300K</span>
-            </div>
-          </div>
         </div>
 
         {/* Amount and Percentage Inputs */}
         <div>
-          <label className="block text-sm mb-1">Amount</label>
+          <label className="block text-xs mb-1">Amount</label>
           <div className="flex gap-4 mb-4 items-center">
             <Input
-              type="number"
               placeholder="Amount"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
@@ -158,7 +140,6 @@ const AlarmManager = () => {
               }}
             />
             <Input
-              type="number"
               placeholder="Percentage"
               value={percentage}
               onChange={(e) => setPercentage(e.target.value)}
