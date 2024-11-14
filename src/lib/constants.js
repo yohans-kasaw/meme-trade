@@ -1,5 +1,4 @@
 import PumpFunIcon from "../../public/svg_icons/PumpFunIcon.svg";
-import MoonShotIcon from "../../public/svg_icons/moon_shot.svg";
 
 export const booleanOptionsList = [
   { label: "Pump.Fun", value: "isPumpFun", icon: <PumpFunIcon /> },
