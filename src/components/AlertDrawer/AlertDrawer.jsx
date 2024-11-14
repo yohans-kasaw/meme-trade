@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Select, Input, Button } from "antd";
 
-import AlarmIcon from "../../../public/svg_icons/alarm-icon-white.svg";
+import AlarmIcon from "@public/svg_icons/alarm-icon-white.svg";
 import AlertItem from "./AlertItem";
 import "antd/dist/reset.css";
 

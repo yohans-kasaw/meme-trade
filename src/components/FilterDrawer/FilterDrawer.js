@@ -1,10 +1,10 @@
 // FilterDrawer.jsx
 import { useState } from "react";
-import BooleanOptions from "./BooleanOptions";
-import RealTimeRefreshRateSlider from "./RealTimeRefreshRateSlider";
-import RangeOptions from "./RangeOptions";
-import DrawerHeader from "../Common/DrawerHeader";
-import { booleanOptionsList } from "../../lib/constants";
+import BooleanOptions from "@/components/FilterDrawer/BooleanOptions";
+import RealTimeRefreshRateSlider from "@/components/FilterDrawer/RealTimeRefreshRateSlider";
+import RangeOptions from "@/components/FilterDrawer/RangeOptions";
+import DrawerHeader from "@/components/Common/DrawerHeader";
+import { booleanOptionsList } from "@/lib/constants";
 
 const getDefaultBooleanOptions = () =>
   booleanOptionsList.reduce((acc, option) => {

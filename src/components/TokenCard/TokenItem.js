@@ -1,41 +1,41 @@
 import AvatarWithProgress from "./AvatarWithProgress";
-import VolumeDisplay from "../../public/svg_icons/volume_display.svg";
+import VolumeDisplay from "@public/svg_icons/volume_display.svg";
 
-import SolanaChainIcon from "../../public/svg_icons/Solana-chain.svg";
-import EthereumChainIcon from "../../public/svg_icons/Solana-chain.svg";
-import ChartLinkIcon from "../../public/svg_icons/chartLink.svg";
+import SolanaChainIcon from "@public/svg_icons/Solana-chain.svg";
+import EthereumChainIcon from "@public/svg_icons/Solana-chain.svg";
+import ChartLinkIcon from "@public/svg_icons/chartLink.svg";
 
-import TokenTeleIcon from "../../public/svg_icons/tokentele_btn.svg";
-import TokenWebIcon from "../../public/svg_icons/tokenweb_btn.svg";
-import TokenXIcon from "../../public/svg_icons/tokenx_btn.svg";
-import TokenSourceIcon from "../../public/svg_icons/pump_btn.svg";
+import TokenTeleIcon from "@public/svg_icons/tokentele_btn.svg";
+import TokenWebIcon from "@public/svg_icons/tokenweb_btn.svg";
+import TokenXIcon from "@public/svg_icons/tokenx_btn.svg";
+import TokenSourceIcon from "@public/svg_icons/pump_btn.svg";
 
-import AlarmIcon from "../../public/svg_icons/alarm_btn.svg";
-import VelocityIcon from "../../public/svg_icons/velocity_btn.svg";
+import AlarmIcon from "@public/svg_icons/alarm_btn.svg";
+import VelocityIcon from "@public/svg_icons/velocity_btn.svg";
 
-import PeopleIcon from "../../public/svg_icons/people.svg";
-import PersonTickIcon from "../../public/svg_icons/person_tick.svg";
-import CommentsIcon from "../../public/svg_icons/comments_icon.svg";
-import MCIcon from "../../public/svg_icons/MC.svg";
-import PersonRichIcon from "../../public/svg_icons/person_rich.svg";
-import MushroomIcon from "../../public/svg_icons/messhroom.svg";
+import PeopleIcon from "@public/svg_icons/people.svg";
+import PersonTickIcon from "@public/svg_icons/person_tick.svg";
+import CommentsIcon from "@public/svg_icons/comments_icon.svg";
+import MCIcon from "@public/svg_icons/MC.svg";
+import PersonRichIcon from "@public/svg_icons/person_rich.svg";
+import MushroomIcon from "@public/svg_icons/messhroom.svg";
 
-import DevIcon from "../../public/svg_icons/dev_vector.svg";
-import WalletTickIcon from "../../public/svg_icons/wallet_tick.svg";
+import DevIcon from "@public/svg_icons/dev_vector.svg";
+import WalletTickIcon from "@public/svg_icons/wallet_tick.svg";
 
-import StarVectorIcon from "../../public/svg_icons/star_vector.svg";
-import GlassEmojiIcon from "../../public/svg_icons/glass_emoji.svg";
+import StarVectorIcon from "@public/svg_icons/star_vector.svg";
+import GlassEmojiIcon from "@public/svg_icons/glass_emoji.svg";
 
-import DexIcon from "../../public/svg_icons/dex_icon.svg";
-import AdsIcon from "../../public/svg_icons/ads_icon.svg";
-import TrendIcon from "../../public/svg_icons/trend_icon.svg";
-import CtoIcon from "../../public/svg_icons/cto_icon.svg";
+import DexIcon from "@public/svg_icons/dex_icon.svg";
+import AdsIcon from "@public/svg_icons/ads_icon.svg";
+import TrendIcon from "@public/svg_icons/trend_icon.svg";
+import CtoIcon from "@public/svg_icons/cto_icon.svg";
 
-import WarningIcon from "../../public/svg_icons/warningIcon.svg";
-import VelocityPopUp from "./VelocityPopUp";
+import WarningIcon from "@public/svg_icons/warningIcon.svg";
+import VelocityPopUp from "@/components/Popups/VelocityPopUp";
 import { Drawer, Popover } from "antd";
 import { useState } from "react";
-import AlertDrawer from "./AlertDrawer/AlertDrawer";
+import AlertDrawer from "@/components/AlertDrawer/AlertDrawer";
 
 import { useMediaQuery } from 'react-responsive';
 

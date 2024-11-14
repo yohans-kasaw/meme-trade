@@ -1,8 +1,8 @@
 import { Tabs } from "antd";
-import TokenGroup from "./TokenGroup";
+import TokenGroup from "@/components/DashBoard/TokenGroup";
 import { useState } from "react";
-import TradingSignal from "./TradingSignal";
-import TabSegments from "./TabSegments";
+import TradingSignal from "@/components/DashBoard/TradingSignal";
+import TabSegments from "@/components/DashBoard//TabSegments";
 
 function TokenBoard({ tokens, signals }) {
   // Sorting tokens in different ways

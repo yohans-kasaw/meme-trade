@@ -1,5 +1,5 @@
-import TokenFilterPanel from "./TokenFilterPanel";
-import TokenItem from "./TokenItem";
+import TokenFilterPanel from "@/components/DashBoard/TokenFilterPanel";
+import TokenItem from "@/components/TokenCard/TokenItem";
 
 function TokenGroup({ tokens }) {
   return (

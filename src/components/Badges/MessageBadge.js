@@ -1,5 +1,5 @@
 import { Badge } from "antd";
-import MessageIcon from "../../public/svg_icons/message_icon.svg";
+import MessageIcon from "@public/svg_icons/message_icon.svg";
 
 const MessageBadge = ({ count }) => {
   return (

@@ -1,6 +1,6 @@
 // RangeOptions.jsx
-import RangeItem from "./RangeItem";
-import { rangeOptionLabels } from "../../lib/constants";
+import RangeItem from "@/components/FilterDrawer/RangeItem";
+import { rangeOptionLabels } from "@/lib/constants";
 
 const RangeOptions = ({ rangeOptions, onRangeOptionChange }) => {
   return (

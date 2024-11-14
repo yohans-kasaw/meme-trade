@@ -1,5 +1,5 @@
 import { useState } from "react";
-import NotificationIcon from "../../public/svg_icons/notification.svg";
+import NotificationIcon from "@public/svg_icons/notification.svg";
 
 const CustomSegmented = ({ value, onChange, signalsCount, options = [] }) => {
   const [selected, setSelected] = useState(value || options[0]);

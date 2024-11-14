@@ -1,6 +1,6 @@
 // RealTimeRefreshRateSlider.jsx
 import { Slider } from "antd";
-import { refreshRates } from "../../lib/constants";
+import { refreshRates } from "@/lib/constants";
 
 const RealTimeRefreshRateSlider = ({
   refreshRateIndex,

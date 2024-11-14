@@ -1,7 +1,7 @@
 import { tailwindColors } from "@/lib/colors";
 import React from "react";
 import { Avatar, Progress } from "antd";
-import TabletMedIcon from "../../public/svg_icons/tablet_med_icon.svg";
+import TabletMedIcon from "@public/svg_icons/tablet_med_icon.svg";
 
 const AvatarWithProgress = ({ imageUrl, progress, sourceLink }) => {
   const size = 70;

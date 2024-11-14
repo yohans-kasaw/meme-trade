@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Drawer } from "antd";
-import DownPiramidIcon from "../../public/svg_icons/down_piramid.svg";
-import SortSettingIcon from "../../public/svg_icons/sort_setting.svg";
-import FilterSettingIcon from "../../public/svg_icons/filter_setting_icon.svg";
+import DownPiramidIcon from "@public/svg_icons/down_piramid.svg";
+import SortSettingIcon from "@public/svg_icons/sort_setting.svg";
+import FilterSettingIcon from "@public/svg_icons/filter_setting_icon.svg";
 import Image from "next/image";
 import { useMediaQuery } from 'react-responsive';
 

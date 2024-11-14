@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { Avatar } from "antd";
 import Image from "next/image";
-import SecondLogo from "../../public/svg_icons/second_logo.svg";
-import AARCXIOLogo from "../../public/svg_icons/AARCXIO.svg";
-import FireCallBadge from "./FireCallBadge";
-import MessageBadge from "./MessageBadge";
-import PumpBadge from "./PumpBadge";
-import TradingSignalBadge from "./TradingSignalBadge";
-import SearchIcon from "../../public/svg_icons/SearchIcon.svg";
-import SearchIconButton from "../../public/svg_icons/SearchIconButton.svg";
+
+import SecondLogo from "@public/svg_icons/second_logo.svg";
+import AARCXIOLogo from "@public/svg_icons/AARCXIO.svg";
+import SearchIcon from "@public/svg_icons/SearchIcon.svg";
+import SearchIconButton from "@public/svg_icons/SearchIconButton.svg";
+
+import FireCallBadge from "@/components/Badges/FireCallBadge";
+import MessageBadge from "@/components/Badges/MessageBadge";
+import PumpBadge from "@/components/Badges/PumpBadge";
+import TradingSignalBadge from "@/components/Badges/TradingSignalBadge";
 
 function SearchBar({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState("");

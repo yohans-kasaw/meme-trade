@@ -1,8 +1,8 @@
 // SortingOptionsDrawer.jsx
 import { useState } from "react";
-import SortingOptionItem from "./SortingOptionItem";
-import DrawerHeader from "../Common/DrawerHeader";
-import { rangeOptionLabels } from "../../lib/constants";
+import SortingOptionItem from "@/components/SortingDrawer/SortingOptionItem";
+import DrawerHeader from "@/components/Common/DrawerHeader";
+import { rangeOptionLabels } from "@/lib/constants";
 
 const getDefaultSortingOptions = () =>
   rangeOptionLabels.map((label) => ({

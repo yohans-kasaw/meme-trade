@@ -1,6 +1,6 @@
 // BooleanOptions.jsx
 import { Checkbox, ConfigProvider } from "antd";
-import { booleanOptionsList } from "../../lib/constants";
+import { booleanOptionsList } from "@/lib/constants";
 
 const BooleanOptions = ({ booleanOptions, onOptionChange }) => {
   return (

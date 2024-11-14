@@ -1,10 +1,8 @@
-import React from "react";
-import AlarmIcon from "../../../public/svg_icons/alarm_btn.svg";
-import RefreshIcon from "../../../public/svg_icons/refresh_icon.svg";
-import EditIcon from "../../../public/svg_icons/edit_icon.svg";
-import DeleteIcon from "../../../public/svg_icons/delete_icon.svg";
-import TriggeredIcon from "../../../public/svg_icons/alarm_icon_pink.svg";
-import ActiveIcon from "../../../public/svg_icons/alarm_icon_green.svg";
+import RefreshIcon from "@public/svg_icons/refresh_icon.svg";
+import EditIcon from "@public/svg_icons/edit_icon.svg";
+import DeleteIcon from "@public/svg_icons/delete_icon.svg";
+import TriggeredIcon from "@public/svg_icons/alarm_icon_pink.svg";
+import ActiveIcon from "@public/svg_icons/alarm_icon_green.svg";
 
 const AlertItem = ({
   title,

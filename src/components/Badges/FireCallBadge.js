@@ -1,5 +1,5 @@
 import { Badge } from "antd";
-import FireIcon from "../../public/svg_icons/fire_icon.svg";
+import FireIcon from "@public/svg_icons/fire_icon.svg";
 
 const FireCallBadge = ({ count }) => {
   return (

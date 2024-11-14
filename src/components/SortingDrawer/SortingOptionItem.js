@@ -1,8 +1,8 @@
 // SortingOptionItem.jsx
 import PropTypes from "prop-types";
 import { Checkbox, ConfigProvider } from "antd";
-import DecreasePyramid from "../../../public/svg_icons/decrease_icon.svg";
-import IncreasePyramid from "../../../public/svg_icons/increase_icon.svg";
+import DecreasePyramid from "@public/svg_icons/decrease_icon.svg";
+import IncreasePyramid from "@public/svg_icons/increase_icon.svg";
 
 const SortingOptionItem = ({ option, onOptionChange }) => {
   const { label, selected, ascending } = option;

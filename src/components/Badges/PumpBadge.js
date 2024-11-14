@@ -1,5 +1,5 @@
 import { Badge } from "antd";
-import NotificationIcon from "../../public/svg_icons/notification_icon.svg";
+import NotificationIcon from "@public/svg_icons/notification_icon.svg";
 
 const PumpBadge  = ({ count }) => {
   return (

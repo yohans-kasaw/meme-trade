@@ -1,5 +1,5 @@
-import TabletMedIcon from "../../public/svg_icons/tablet_med_icon.svg";
-import MoonShotIcon from "../../public/svg_icons/moon_shot.svg";
+import TabletMedIcon from "@public/svg_icons/tablet_med_icon.svg";
+import MoonShotIcon from "@public/svg_icons/moon_shot.svg";
 
 function SignalCall({ signal }) {
   return (

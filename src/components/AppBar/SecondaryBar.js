@@ -1,7 +1,7 @@
-import Alert from "../../public/svg_icons/svg1.svg";
-import Bell from "../../public/svg_icons/svg2.svg";
-import Decrease from "../../public/svg_icons/svg3.svg";
-import Increase from "../../public/svg_icons/svg4.svg";
+import Alert from "@public/svg_icons/svg1.svg";
+import Bell from "@public/svg_icons/svg2.svg";
+import Decrease from "@public/svg_icons/svg3.svg";
+import Increase from "@public/svg_icons/svg4.svg";
 const SecondaryBar = () => {
   return (
     <div className="bg-primaryBlack px-4 py-3 flex items-center space-x-4 text-white border-b border-gray-700 overflow-hidden">

@@ -1,6 +1,6 @@
 import SignalCall from "./SignalCall";
-import NotificationIcon from "../../public/svg_icons/notification.svg";
-import DownPiramidIcon from "../../public/svg_icons/down_piramid.svg";
+import NotificationIcon from "@public/svg_icons/notification.svg";
+import DownPiramidIcon from "@public/svg_icons/down_piramid.svg";
 
 import Image from "next/image";
 

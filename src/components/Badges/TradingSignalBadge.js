@@ -1,5 +1,5 @@
 import { Badge } from "antd";
-import PumpIcon from "../../public/svg_icons/pump_icon.svg";
+import PumpIcon from "@public/svg_icons/pump_icon.svg";
 
 const TradingSignalBadge = ({ count }) => {
   return (
