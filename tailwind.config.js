@@ -8,6 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        grayText: "#888888", // Gray text color
         primary: "#44E19F", // green
         secondary: "#CDD500", // yellow
 
@@ -27,6 +28,7 @@ module.exports = {
         accentPink: "#FF2897", // Bold pink for emphasis or highlights
         accentLime: "#CDD500", // Lime for alert or notification
         accentBrightGreen: "#0CD40B", // Bright green for success messages or indicators
+        lightBlue: "#006F92", // Light blue for secondary CTAs or links
       },
       fontSize: {
         // Override the 'xs' size

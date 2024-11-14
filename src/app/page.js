@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 
+import AlertManager from "@/components/AlertDrawer/AlertManager";
 export default function Home() {
   const dispatch = useDispatch();
 
