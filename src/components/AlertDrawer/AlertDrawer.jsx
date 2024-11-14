@@ -45,28 +45,28 @@ const AlertDrawer = () => {
   return (
     <div className="bg-darkGray text-white shadow-md h-full">
       {/* Form Section */}
-      <div className="flex items-center justify-between border-b-2 border-accentMidGray">
-        <div className="flex items-end w-1/2 bg-[#006F9280] py-4 px-2">
-          <h2 className="flex gap-2 text-xl font-bold mr-2">
-            Alarms{" "}
-            <span>
+      <div className="flex items-streach justify-between  border-b-[1px] ">
+        <div className="flex flex-row bg-[#006F9280] w-1/2  pb-[4px] pl-2">
+          <div className="flex items-end text-[20px] font-semibold">
+            {"Alarms"}
+            <span className="ml-2 flex items-end">
               <AlarmIcon />
             </span>
-          </h2>
+          </div>
         </div>
 
-        <div className="flex justify-center items-center w-1/2 space-x-2 h-full">
-          <Button
+        <div className="flex justify-end gap-3 items-center w-1/2 py-2 pr-2">
+          <div
             onClick={clearForm}
             type="text"
-            size="large"
-            className="!text-white !text-base !font-bold !text-[12px] w-2/5 h-[80%]"
+            className="!text-white !font-bold !text-[12px]"
           >
             Cancel
-          </Button>
+          </div>
           <Button
             onClick={handleAddAlarm}
-            className="!bg-primary   !text-white !py-4 px-8 !text-[14px] !font-bold w-2/5 h-[80%]"
+            className="!bg-green-700  !text-white !text-[14px] !py-2 !px-4 !font-bold"
+            type="primary"
             size="large"
           >
             Apply
@@ -76,7 +76,7 @@ const AlertDrawer = () => {
 
       {/* Header */}
 
-      <div className="mb-6 p-4 border-b border-white text-xs">
+      <div className="mb-6 p-4 border-b-[1px] text-xs">
         {/* Form Row */}
         <div className="flex flex-col md:flex-row justify-between mb-4 w-full">
           {/* Type and Movement Selectors */}
