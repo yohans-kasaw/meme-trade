@@ -6,7 +6,7 @@ import DeleteIcon from "../../../public/svg_icons/delete_icon.svg";
 import TriggeredIcon from "../../../public/svg_icons/alarm_icon_pink.svg";
 import ActiveIcon from "../../../public/svg_icons/alarm_icon_green.svg";
 
-const AlarmCard = ({
+const AlertItem = ({
   title,
   type,
   condition,
@@ -83,4 +83,4 @@ const AlarmCard = ({
   );
 };
 
-export default AlarmCard;
+export default AlertItem;

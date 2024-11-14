@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { Select, Input, Button } from "antd";
 
 import AlarmIcon from "../../../public/svg_icons/alarm-icon-white.svg";
-import AlertCard from "./AlertCard";
+import AlertItem from "./AlertItem";
 import "antd/dist/reset.css";
 
 const { Option } = Select;
 
-const AlarmManager = () => {
+const AlertDrawer = () => {
   const [type, setType] = useState("Market Cap");
   const [movement, setMovement] = useState("Down More Than");
   const [amount, setAmount] = useState("");
@@ -43,7 +43,7 @@ const AlarmManager = () => {
   };
 
   return (
-    <div className="bg-darkGray text-white shadow-md lg:max-w-[30%]">
+    <div className="bg-darkGray text-white shadow-md h-full">
       {/* Form Section */}
       <div className="flex items-center justify-between border-b-2 border-accentMidGray">
         <div className="flex items-end w-1/2 bg-[#006F9280] py-4 px-2">
@@ -168,7 +168,7 @@ const AlarmManager = () => {
       {/* Alarms List */}
       <div className="flex flex-col gap-4 p-2 max-h-screen overflow-auto velocity-custom-scrollbar">
         {alarms.map((alarm, index) => (
-          <AlertCard
+          <AlertItem
             key={index}
             title={alarm.title}
             type={alarm.type}
@@ -230,4 +230,4 @@ const AlarmManager = () => {
   );
 };
 
-export default AlarmManager;
+export default AlertDrawer;

@@ -33,8 +33,9 @@ import CtoIcon from "../../public/svg_icons/cto_icon.svg";
 
 import WarningIcon from "../../public/svg_icons/warningIcon.svg";
 import VelocityPopUp from "./VelocityPopUp";
-import { Popover } from "antd";
+import { Drawer, Popover } from "antd";
 import { useState } from "react";
+import AlertDrawer from "./AlertDrawer/AlertDrawer";
 
 const TokenItem = ({ token }) => {
   const progress = parseFloat(token.bonding_curve_progress.replace("%", ""));
@@ -42,9 +43,18 @@ const TokenItem = ({ token }) => {
     token.chain === "Ethereum" ? <EthereumChainIcon /> : <SolanaChainIcon />;
 
   const [open, setOpen] = useState(false);
+  const [isAlarmDrawerVisible, setIsAlarmDrawerVisible] = useState(false);
 
   const handleOpenChange = (newOpen) => {
     setOpen(newOpen);
+  };
+
+  const showAlarmDrawer = () => {
+    setIsAlarmDrawerVisible(true);
+  };
+
+  const onCloseAlarmDrawer = () => {
+    setIsAlarmDrawerVisible(false);
   };
 
   return (
@@ -58,8 +68,7 @@ const TokenItem = ({ token }) => {
               <div className="flex-grow">
                 <AvatarWithProgress
                   imageUrl={
-                    token.external_links.image_link ||
-                    "/images/meme_fallback.png"
+                    token.external_links.image_link || "/images/meme_fallback.png"
                   }
                   progress={progress}
                   sourceLink={token.source}
@@ -175,7 +184,11 @@ const TokenItem = ({ token }) => {
                 </div>
                 {/* Second group */}
                 <div className="flex flex-row gap-0.5 items-stretch">
-                  <div className={!token.user_alarm ? "hidden" : ""}>
+                  <div
+                    className={!token.user_alarm ? "hidden" : ""}
+                    onClick={showAlarmDrawer}
+                    style={{ cursor: "pointer" }} // Optional: change cursor to pointer
+                  >
                     <AlarmIcon />
                   </div>
                   <div className={!token.velocity ? "hidden" : ""}>
@@ -225,6 +238,19 @@ const TokenItem = ({ token }) => {
           </div>
         </div>
       </div>
+
+      {/* Alarm Drawer */}
+      <Drawer
+        placement="bottom"
+        closable={false}
+        onClose={onCloseAlarmDrawer}
+        visible={isAlarmDrawerVisible}
+        bodyStyle={{ padding: 0 }}
+        height="90%"
+        maskClosable={true}
+      >
+        <AlertDrawer />
+      </Drawer>
     </div>
   );
 };
