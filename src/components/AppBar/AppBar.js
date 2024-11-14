@@ -91,7 +91,7 @@ const AppBar = ({
         />
       </div>
     </div>
-    <div className="hidden md:block">
+    <div className="">
       <SecondaryBar />
     </div>
   </div>
