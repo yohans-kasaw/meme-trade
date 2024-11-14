@@ -37,7 +37,7 @@ import { Drawer, Popover } from "antd";
 import { useState } from "react";
 import AlertDrawer from "@/components/AlertDrawer/AlertDrawer";
 
-import { useMediaQuery } from 'react-responsive';
+import { useMediaQuery } from "react-responsive";
 
 const TokenItem = ({ token }) => {
   const progress = parseFloat(token.bonding_curve_progress.replace("%", ""));
@@ -63,16 +63,17 @@ const TokenItem = ({ token }) => {
 
   return (
     <div>
-      <div className="flex flex-col gap-0.5 items-stretch text-white">
-        <div className="bg-darkGray rounded-sm py-1 pr-1">
+      <div className="flex flex-col gap-0.5 items-stretch text-white overflow-x-hidden">
+        <div className="bg-darkGray rounded-sm py-1 pr-0.5">
           {/* Header */}
           <div className="flex flex-row">
             {/* ProfileSection */}
-            <div className="flex flex-col pr-2 pl-1.5">
+            <div className="flex flex-col pr-1 pl-1">
               <div className="flex-grow">
                 <AvatarWithProgress
                   imageUrl={
-                    token.external_links.image_link || "/images/meme_fallback.png"
+                    token.external_links.image_link ||
+                    "/images/meme_fallback.png"
                   }
                   progress={progress}
                   sourceLink={token.source}
@@ -91,11 +92,11 @@ const TokenItem = ({ token }) => {
             </div>
 
             {/* MainContent */}
-            <div className="flex-grow flex flex-col gap-1">
+            <div className="flex-grow flex flex-col gap-0.5">
               <div className="flex flex-row">
                 {/* SubContent */}
                 <div className="flex-grow flex flex-col gap-0.5">
-                  <div className="flex flex-row justify-start gap-1 font-bold text-xs">
+                  <div className="flex flex-row justify-start gap-0.5 font-bold text-xs">
                     <div>{token.token_ticker}</div>
                     <div className="text-accentGreen w-14 truncate">
                       {token.token_name}
@@ -105,7 +106,7 @@ const TokenItem = ({ token }) => {
                       {token.comments_count}
                     </div>
                   </div>
-                  <div className="flex flex-row justify-start gap-2 font-bold text-xs">
+                  <div className="flex flex-row justify-start gap-1 font-bold text-xs">
                     <div>
                       <div className="border border-accentBlue rounded px-0.5 text-accentBrightGreen">
                         {token.time_from_creation}
@@ -134,14 +135,14 @@ const TokenItem = ({ token }) => {
                 {/* RightSection */}
                 <div className="flex items-center">
                   <div className="relative">
-                    <VolumeDisplay />
+                      <VolumeDisplay />
                     <div
                       className="absolute text-accentBrightGreen font-bold"
                       style={{
                         transform: "translate(50%, -50%)",
                         top: "50%",
                         left: "0",
-                        width: "2.8rem",
+                        width: "2rem",
                         textAlign: "right",
                       }}
                     >
@@ -152,7 +153,7 @@ const TokenItem = ({ token }) => {
               </div>
               <div className="flex flex-row justify-between">
                 {/* First group */}
-                <div className="flex flex-row justify-start gap-1">
+                <div className="flex flex-row justify-start gap-0.5">
                   <a
                     href={token.external_links.social_1 || "#"}
                     target="_blank"
@@ -245,7 +246,7 @@ const TokenItem = ({ token }) => {
 
       {/* Alarm Drawer */}
       <Drawer
-        placement={isLargeScreen ? "right":"bottom"}
+        placement={isLargeScreen ? "right" : "bottom"}
         closable={false}
         onClose={onCloseAlarmDrawer}
         open={isAlarmDrawerVisible}

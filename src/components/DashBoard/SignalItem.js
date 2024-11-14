@@ -1,7 +1,7 @@
 import TabletMedIcon from "@public/svg_icons/tablet_med_icon.svg";
 import MoonShotIcon from "@public/svg_icons/moon_shot.svg";
 
-function SignalCall({ signal }) {
+function SignalItem({ signal }) {
   return (
     <div className="my-1 text-white text-xs font-bold">
       {/* Signal Type */}
@@ -48,4 +48,4 @@ function SignalCall({ signal }) {
   );
 }
 
-export default SignalCall;
+export default SignalItem;
