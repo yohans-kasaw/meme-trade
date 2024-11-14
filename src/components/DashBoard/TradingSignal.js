@@ -30,7 +30,7 @@ const TradingSignal = ({ signals }) => {
       </div>
 
       {/* list of signals */}
-      <div className="flex flex-col gap-1 h-[88vh] md:h-[88vh] overflow-y-scroll">
+      <div className="flex flex-col gap-1 h-[86vh] overflow-y-scroll">
         {signals.map((signal, index) => (
           <SignalItem key={index} signal={signal} />
         ))}

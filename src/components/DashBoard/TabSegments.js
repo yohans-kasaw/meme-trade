@@ -10,7 +10,7 @@ const CustomSegmented = ({ value, onChange, signalsCount, options = [] }) => {
   };
 
   return (
-    <div className="sticky bottom-0 mt-4 flex justify-center  overflow-hidden gap-2">
+    <div className="sticky bottom-0 mt-1 flex justify-center  overflow-hidden gap-2">
       {options.map((option, index) => (
         <button
           key={index}
