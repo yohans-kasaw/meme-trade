@@ -44,12 +44,12 @@ function TokenBoard({ tokens, signals }) {
   return (
     <div>
       {/* Display side by side on medium to large screens */}
-      <div className="hidden lg:flex flex-row gap-3.5 mb-10 items-stretch text-white px-1 overflow-x-scroll">
-        {tabItems.map((item, index) => (
-          <div key={index} className="flex-1 basis-0">
-            {item.children}
-          </div>
-        ))}
+      <div className="hidden lg:flex flex-row items-streach gap-3 text-white px-1">
+          {tabItems.map((item, index) => (
+            <div key={index} className="flex-1">
+              {item.children}
+            </div>
+          ))}
       </div>
 
       {/* Display as tabs on small screens */}
@@ -75,4 +75,3 @@ function TokenBoard({ tokens, signals }) {
 }
 
 export default TokenBoard;
-

@@ -4,7 +4,7 @@ import DownPiramidIcon from "@public/svg_icons/down_piramid.svg";
 import SortSettingIcon from "@public/svg_icons/sort_setting.svg";
 import FilterSettingIcon from "@public/svg_icons/filter_setting_icon.svg";
 import Image from "next/image";
-import { useMediaQuery } from 'react-responsive';
+import { useMediaQuery } from "react-responsive";
 
 import FilterDrawer from "@/components/FilterDrawer/FilterDrawer";
 import SortingOptionsDrawer from "@/components/SortingDrawer/SortingOptionsDrawer";
@@ -82,11 +82,11 @@ function TokenFilterPanel() {
 
       {/* Filter Drawer */}
       <Drawer
-        placement={isLargeScreen ? "right":"bottom"}
+        placement={isLargeScreen ? "right" : "bottom"}
         closable={false}
         onClose={closeFilterDrawer}
-        visible={filterDrawerVisible}
-        bodyStyle={{ padding: 0 }}
+        open={filterDrawerVisible}
+        styles={{ body: { padding: 0 } }}
         height="90%"
         maskClosable={true}
       >
@@ -95,11 +95,11 @@ function TokenFilterPanel() {
 
       {/* Sorting Options Drawer */}
       <Drawer
-        placement={isLargeScreen ? "right":"bottom"}
+        placement={isLargeScreen ? "right" : "bottom"}
         closable={false}
         onClose={closeSortingDrawer}
-        visible={sortingDrawerVisible}
-        bodyStyle={{ padding: 0 }}
+        open={sortingDrawerVisible}
+        styles={{ body: { padding: 0 } }}
         height="90%"
         maskClosable={true}
       >

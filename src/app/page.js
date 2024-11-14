@@ -1,13 +1,11 @@
 "use client";
 import AppBar from "@/components/AppBar/AppBar";
-import SecondaryBar from "@/components/AppBar/SecondaryBar";
 import TokenBoard from "@/components/DashBoard/TokenBoard";
 import { fetchSignals } from "@/lib/slices/tradingSignalSlice";
 import { fetchAlarms } from "@/lib/slices/userAlarmsSlice";
 import { fetchTokens } from "@/lib/slices/userTokenSlice";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -42,16 +40,17 @@ export default function Home() {
   }, [tokensStatus, alarmsStatus, signalsStatus, dispatch]);
 
   return (
-    <div>
-      <AppBar
-        user={{ profile_picture: "/images/profile_avatar_fallback.jpg" }}
-        onSearch={(searchTerm) => {
-          // Handle the search term here
-          console.log("Searching for:", searchTerm);
-        }}
-        badgeCounts={badgeCounts}
-      />
-      <SecondaryBar />
+    <div className="h-screen overflow-hidden">
+      <div>
+        <AppBar
+          user={{ profile_picture: "/images/profile_avatar_fallback.jpg" }}
+          onSearch={(searchTerm) => {
+            // Handle the search term here
+            console.log("Searching for:", searchTerm);
+          }}
+          badgeCounts={badgeCounts}
+        />
+      </div>
       <TokenBoard tokens={tokens} signals={signals} />
     </div>
   );

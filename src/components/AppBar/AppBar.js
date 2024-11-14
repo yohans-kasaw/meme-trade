@@ -11,6 +11,7 @@ import FireCallBadge from "@/components/Badges/FireCallBadge";
 import MessageBadge from "@/components/Badges/MessageBadge";
 import PumpBadge from "@/components/Badges/PumpBadge";
 import TradingSignalBadge from "@/components/Badges/TradingSignalBadge";
+import SecondaryBar from "@/components/AppBar/SecondaryBar";
 
 function SearchBar({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState("");
@@ -53,40 +54,45 @@ const AppBar = ({
   onSearch,
   badgeCounts = { fireCall: 0, signalsCount: 0, pump: 0, message: 0 },
 }) => (
-  <div className="flex justify-between items-center bg-darkGray px-4 py-1 text-white shadow-md">
-    {/* Left Section - Menu and Logo */}
+  <div>
+    <div className="flex justify-between items-center bg-darkGray px-4 py-1 text-white shadow-md">
+      {/* Left Section - Menu and Logo */}
 
-    <div className="flex items-center gap-2 flex-grow lg:flex-grow-0">
-      {/* Collapse Icon */}
-      <Image
-        src="/svg_icons/CollapseIcon.png"
-        width={20}
-        height={20}
-        alt="Collapse Icon"
-      />
-      {/* Logo - Hidden on screens smaller than md */}
-      <div className="hidden md:flex items-center gap-1">
-        <SecondLogo />
-        <AARCXIOLogo />
+      <div className="flex items-center gap-2 flex-grow lg:flex-grow-0">
+        {/* Collapse Icon */}
+        <Image
+          src="/svg_icons/CollapseIcon.png"
+          width={20}
+          height={20}
+          alt="Collapse Icon"
+        />
+        {/* Logo - Hidden on screens smaller than md */}
+        <div className="hidden md:flex items-center gap-1">
+          <SecondLogo />
+          <AARCXIOLogo />
+        </div>
+        {/* Search Bar */}
+        <div className="flex-grow">
+          <SearchBar onSearch={onSearch} />
+        </div>
       </div>
-      {/* Search Bar */}
-      <div className="flex-grow">
-        <SearchBar onSearch={onSearch} />
+
+      {/* Right Section - Icons and Profile (Hidden on screens smaller than lg) */}
+      <div className="hidden lg:flex items-center space-x-12">
+        <FireCallBadge count={badgeCounts.fireCall} />
+        <PumpBadge count={badgeCounts.pump} />
+        <TradingSignalBadge count={badgeCounts.signalsCount} />
+        <MessageBadge count={badgeCounts.message} />
+        <Avatar
+          src={user?.profile_picture || "/images/profile_avatar_fallback.jpg"}
+          size={40}
+          className="rounded-full"
+          alt="User Avatar"
+        />
       </div>
     </div>
-
-    {/* Right Section - Icons and Profile (Hidden on screens smaller than lg) */}
-    <div className="hidden lg:flex items-center space-x-12">
-      <FireCallBadge count={badgeCounts.fireCall} />
-      <PumpBadge count={badgeCounts.pump} />
-      <TradingSignalBadge count={badgeCounts.signalsCount} />
-      <MessageBadge count={badgeCounts.message} />
-      <Avatar
-        src={user?.profile_picture || "/images/profile_avatar_fallback.jpg"}
-        size={40}
-        className="rounded-full"
-        alt="User Avatar"
-      />
+    <div className="hidden md:block">
+      <SecondaryBar />
     </div>
   </div>
 );
