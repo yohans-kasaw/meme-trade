@@ -4,6 +4,7 @@ import DownPiramidIcon from "../../public/svg_icons/down_piramid.svg";
 import SortSettingIcon from "../../public/svg_icons/sort_setting.svg";
 import FilterSettingIcon from "../../public/svg_icons/filter_setting_icon.svg";
 import Image from "next/image";
+import { useMediaQuery } from 'react-responsive';
 
 import FilterDrawer from "@/components/FilterDrawer/FilterDrawer";
 import SortingOptionsDrawer from "@/components/SortingDrawer/SortingOptionsDrawer";
@@ -39,6 +40,8 @@ function ScaledIcon({ Icon, Scale = 0.7 }) {
 function TokenFilterPanel() {
   const [filterDrawerVisible, setFilterDrawerVisible] = useState(false);
   const [sortingDrawerVisible, setSortingDrawerVisible] = useState(false);
+
+  const isLargeScreen = useMediaQuery({ query: "(min-width: 1024px)" });
 
   const openFilterDrawer = () => {
     setFilterDrawerVisible(true);
@@ -79,13 +82,11 @@ function TokenFilterPanel() {
 
       {/* Filter Drawer */}
       <Drawer
-        placement="bottom"
+        placement={isLargeScreen ? "right":"bottom"}
         closable={false}
         onClose={closeFilterDrawer}
         visible={filterDrawerVisible}
-        getContainer={false}
         bodyStyle={{ padding: 0 }}
-        width="40%"
         height="90%"
         maskClosable={true}
       >
@@ -94,12 +95,11 @@ function TokenFilterPanel() {
 
       {/* Sorting Options Drawer */}
       <Drawer
-        placement="bottom"
+        placement={isLargeScreen ? "right":"bottom"}
         closable={false}
         onClose={closeSortingDrawer}
         visible={sortingDrawerVisible}
         bodyStyle={{ padding: 0 }}
-        width="40%"
         height="90%"
         maskClosable={true}
       >

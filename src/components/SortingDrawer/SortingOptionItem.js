@@ -32,7 +32,7 @@ const SortingOptionItem = ({ option, onOptionChange }) => {
             checked={selected}
             onChange={handleCheckboxChange}
             aria-label={`Select ${label}`}
-            className="scale-250"
+            className="scale-[1.2]"
           />
         </ConfigProvider>
         <div

@@ -37,6 +37,8 @@ import { Drawer, Popover } from "antd";
 import { useState } from "react";
 import AlertDrawer from "./AlertDrawer/AlertDrawer";
 
+import { useMediaQuery } from 'react-responsive';
+
 const TokenItem = ({ token }) => {
   const progress = parseFloat(token.bonding_curve_progress.replace("%", ""));
   const chainIcon =
@@ -56,6 +58,8 @@ const TokenItem = ({ token }) => {
   const onCloseAlarmDrawer = () => {
     setIsAlarmDrawerVisible(false);
   };
+
+  const isLargeScreen = useMediaQuery({ query: "(min-width: 1024px)" });
 
   return (
     <div>
@@ -241,7 +245,7 @@ const TokenItem = ({ token }) => {
 
       {/* Alarm Drawer */}
       <Drawer
-        placement="bottom"
+        placement={isLargeScreen ? "right":"bottom"}
         closable={false}
         onClose={onCloseAlarmDrawer}
         visible={isAlarmDrawerVisible}
