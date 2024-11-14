@@ -51,7 +51,6 @@ export default function Home() {
         }}
         badgeCounts={badgeCounts}
       />
-      <SecondaryBar />
       <TokenBoard tokens={tokens} signals={signals} />
     </div>
   );
