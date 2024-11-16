@@ -54,11 +54,11 @@ body {
 }
 
 svg {
-  height: calc(0.4vw + 0.4rem);
-  width: calc(0.4vw + 0.4rem);
+  height: clamp(15px,calc(0.4vw + 0.4rem),80px);
+  width: clamp(15px,calc(0.4vw + 0.4rem),80px);
 }
 
 .AvatarWithProgress svg{
-  height: calc(2vw + 1rem);
-  width: calc(2vw + 1rem);
+  height: clamp(30px,calc(5vw + 1rem),280px);
+  width: clamp(30px,calc(5vw + 1rem),280px);
 }
