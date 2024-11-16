@@ -27,7 +27,7 @@ const AlarmText = ({ token, alert_conditions }) => {
   const metricLabel = metric === "Market Cap" ? "MC" : "TV";
 
   return (
-    <span className="text-xs font-bold">
+    <span className="text-xs">
       {token_name}{" "}
       <span className="text-green-700">{metricLabel}</span>{" "}
       <span className="text-accentLime">{value}</span>
@@ -39,7 +39,7 @@ const SecondaryBar = () => {
   const alarms = useSelector((state) => state.userAlarms.items);
 
   return (
-    <div className="bg-primaryBlack px-4 py-3 flex items-center gap-1 text-white overflow-x-scroll w-[100vw]">
+    <div className="bg-primaryBlack px-4 py-1 flex items-center gap-1 text-white overflow-x-scroll">
       <div className="flex flex-row items-center gap-10 flex-nowrap whitespace-nowrap">
         <Alert />
         {alarms.map((alarm, index) => {

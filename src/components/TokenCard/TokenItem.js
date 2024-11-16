@@ -1,8 +1,9 @@
 import AvatarWithProgress from "./AvatarWithProgress";
 import VolumeDisplay from "@public/svg_icons/volume_display.svg";
 
-import SolanaChainIcon from "@public/svg_icons/Solana-chain.svg";
-import EthereumChainIcon from "@public/svg_icons/Solana-chain.svg";
+import SolanaChainIcon from "@public/svg_icons/Solana-chain_filter.svg";
+
+import EthereumChainIcon from "@public/svg_icons/Solana-chain_filter.svg";
 import ChartLinkIcon from "@public/svg_icons/chartLink.svg";
 
 import TokenTeleIcon from "@public/svg_icons/tokentele_btn.svg";
@@ -96,7 +97,7 @@ const TokenItem = ({ token }) => {
               <div className="flex flex-row">
                 {/* SubContent */}
                 <div className="flex-grow flex flex-col gap-0.5">
-                  <div className="flex flex-row justify-start gap-0.5 font-bold text-xs">
+                  <div className="flex flex-row justify-start gap-0.5 text-xs">
                     <div>{token.token_ticker}</div>
                     <div className="text-accentGreen w-14 truncate">
                       {token.token_name}
@@ -106,7 +107,7 @@ const TokenItem = ({ token }) => {
                       {token.comments_count}
                     </div>
                   </div>
-                  <div className="flex flex-row justify-start gap-1 font-bold text-xs">
+                  <div className="flex flex-row justify-start gap-1 text-xs">
                     <div>
                       <div className="border border-accentBlue rounded px-0.5 text-accentBrightGreen">
                         {token.time_from_creation}
@@ -119,7 +120,7 @@ const TokenItem = ({ token }) => {
                       <MushroomIcon /> {token.developer_percentage}
                     </div>
                   </div>
-                  <div className="flex flex-row justify-start gap-2 font-bold text-xs">
+                  <div className="flex flex-row justify-start gap-2 text-xs">
                     <div className="flex flex-row items-center gap-0.5">
                       <PeopleIcon /> {token.total_holders}
                     </div>
@@ -135,9 +136,9 @@ const TokenItem = ({ token }) => {
                 {/* RightSection */}
                 <div className="flex items-center">
                   <div className="relative">
-                      <VolumeDisplay />
+                    <VolumeDisplay style={{ width: "4vw" }} />
                     <div
-                      className="absolute text-accentBrightGreen font-bold"
+                      className="absolute text-accentBrightGreen"
                       style={{
                         transform: "translate(50%, -50%)",
                         top: "50%",
@@ -219,14 +220,14 @@ const TokenItem = ({ token }) => {
         {/* Footer */}
         <div className="flex flex-row justify-center gap-0.5 items-center bg-darkGray rounded-sm px-1 py-1">
           <DevIcon />
-          <div className="flex flex-row items-center gap-0.5 font-bold text-xs">
+          <div className="flex flex-row items-center gap-0.5 text-xs">
             <StarVectorIcon /> {token.star_rating}/10
           </div>
           <GlassEmojiIcon />
-          <div className="flex flex-row items-center gap-0.5 font-bold text-xs">
+          <div className="flex flex-row items-center gap-0.5 text-xs">
             <WalletTickIcon /> {token.insider_wallets_percentage}
           </div>
-          <div className="flex flex-row items-center gap-0.5 font-bold text-xs">
+          <div className="flex flex-row items-center gap-0.5 text-xs">
             <WarningIcon /> {token.bonding_curve_progress}
           </div>
           <div className={token.DEX_status === "Listed" ? "" : "hidden"}>
@@ -246,11 +247,11 @@ const TokenItem = ({ token }) => {
 
       {/* Alarm Drawer */}
       <Drawer
-        placement={isLargeScreen ? "right" : "bottom"}
-        closable={false}
         onClose={onCloseAlarmDrawer}
         open={isAlarmDrawerVisible}
-        style={{ padding: 0 }}
+        placement={isLargeScreen ? "right" : "bottom"}
+        closable={false}
+        styles={{ body: { padding: 0 } }}
         height="90%"
         maskClosable={true}
       >

@@ -3,7 +3,7 @@ import MoonShotIcon from "@public/svg_icons/moon_shot.svg";
 
 function SignalItem({ signal }) {
   return (
-    <div className="my-1 text-white text-xs font-bold">
+    <div className="my-1 text-white text-xs">
       {/* Signal Type */}
       <div
         className={`flex items-center py-1 mb-2 border ${
@@ -13,7 +13,7 @@ function SignalItem({ signal }) {
         <div className="ml-2 border border-primary rounded-full p-1 flex items-center justify-center">
           {signal.call_type === "Pump" ? <TabletMedIcon /> : <MoonShotIcon />}
         </div>
-        <span className="font-bold ml-5 md:ml-10">
+        <span className="ml-5 md:ml-10">
           {signal.call_type === "Pump" ? "PUMP CALL" : "MOONSHOT CALL"}
         </span>
       </div>

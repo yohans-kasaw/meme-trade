@@ -3,8 +3,9 @@ import { Drawer } from "antd";
 import DownPiramidIcon from "@public/svg_icons/down_piramid.svg";
 import SortSettingIcon from "@public/svg_icons/sort_setting.svg";
 import FilterSettingIcon from "@public/svg_icons/filter_setting_icon.svg";
-import Image from "next/image";
 import { useMediaQuery } from "react-responsive";
+
+import SolanaChainIcon from "@public/svg_icons/Solana-chain_filter.svg";
 
 import FilterDrawer from "@/components/FilterDrawer/FilterDrawer";
 import SortingOptionsDrawer from "@/components/SortingDrawer/SortingOptionsDrawer";
@@ -12,7 +13,7 @@ import SortingOptionsDrawer from "@/components/SortingDrawer/SortingOptionsDrawe
 export function CountBadge({ count }) {
   return (
     <div className="bg-accentLime rounded-sm text-primaryBlack px-1 text-xs">
-      <div className="font-bold">{count}</div>
+      <div className="">{count}</div>
     </div>
   );
 }
@@ -31,10 +32,6 @@ export function FilterButton({
       {children}
     </div>
   );
-}
-
-function ScaledIcon({ Icon, Scale = 0.7 }) {
-  return <Icon style={{ transform: `scale(${Scale})` }} />;
 }
 
 function TokenFilterPanel() {
@@ -61,21 +58,17 @@ function TokenFilterPanel() {
 
   return (
     <>
-      <div className="text-white flex justify-center items-stretch gap-1.5 p-1 pt-2">
-        <FilterButton gapClass="gap-1" additionalClass="pl-2">
-          <Image
-            src={"/svg_icons/Solana-chain-image.png"}
-            width={15}
-            height={15}
-          />
-          <ScaledIcon Icon={DownPiramidIcon} />
+      <div className="text-white flex justify-center gap-1.5 p-1">
+        <FilterButton gapClass="pr-1">
+          <SolanaChainIcon />
+          <DownPiramidIcon />
         </FilterButton>
         <FilterButton additionalClass="pr-1" onClick={openFilterDrawer}>
-          <ScaledIcon Icon={FilterSettingIcon} />
+          <FilterSettingIcon style={{width:"4vw"}}/>
           <CountBadge count={5} />
         </FilterButton>
         <FilterButton additionalClass="pr-1" onClick={openSortingDrawer}>
-          <ScaledIcon Icon={SortSettingIcon} />
+          <SortSettingIcon style={{width:"4vw"}}/>
           <CountBadge count={5} />
         </FilterButton>
       </div>

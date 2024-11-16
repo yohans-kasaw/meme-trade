@@ -17,7 +17,7 @@ const BooleanOptions = ({ booleanOptions, onOptionChange }) => {
               <div className="scale-150">{option.emoji}</div>
             )}
           </span>
-          <span className="text-white font-bold pr-1">{option.label}</span>
+          <span className="text-white pr-1">{option.label}</span>
           <ConfigProvider
             theme={{
               token: {

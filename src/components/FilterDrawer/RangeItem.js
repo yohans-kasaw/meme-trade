@@ -24,7 +24,7 @@ const RangeItem = ({ label, values, onChange }) => {
           placeholder="Max"
           value={values.maxValue}
           onChange={handleMaxChange}
-          className="w-full bg-black text-white border border-midGray rounded-lg py-2 font-bold text-center"
+          className="w-full bg-black text-white border border-midGray rounded-lg py-2 text-center"
         />
       </div>
     </div>

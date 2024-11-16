@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Avatar } from "antd";
-import Image from "next/image";
 
 import SecondLogo from "@public/svg_icons/second_logo.svg";
 import AARCXIOLogo from "@public/svg_icons/AARCXIO.svg";
@@ -12,6 +11,7 @@ import MessageBadge from "@/components/Badges/MessageBadge";
 import PumpBadge from "@/components/Badges/PumpBadge";
 import TradingSignalBadge from "@/components/Badges/TradingSignalBadge";
 import SecondaryBar from "@/components/AppBar/SecondaryBar";
+import AppBarCollapseIcon from "@public/svg_icons/AppBarCollapse.svg";
 
 function SearchBar({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState("");
@@ -59,13 +59,7 @@ const AppBar = ({
       {/* Left Section - Menu and Logo */}
 
       <div className="flex items-center gap-2 flex-grow lg:flex-grow-0">
-        {/* Collapse Icon */}
-        <Image
-          src="/svg_icons/CollapseIcon.png"
-          width={20}
-          height={20}
-          alt="Collapse Icon"
-        />
+        <AppBarCollapseIcon />
         {/* Logo - Hidden on screens smaller than md */}
         <div className="hidden md:flex items-center gap-1">
           <SecondLogo />

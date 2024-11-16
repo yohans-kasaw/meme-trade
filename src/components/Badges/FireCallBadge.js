@@ -17,7 +17,7 @@ const FireCallBadge = ({ count }) => {
       >
         <FireIcon />
       </Badge>
-      <span className="text-sm font-bold text-accent w-full">Fire</span>
+      {/*<span className="text-xs font-bold text-accent w-full">Fire</span>*/}
     </div>
   );
 };

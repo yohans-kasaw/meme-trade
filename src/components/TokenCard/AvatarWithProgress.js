@@ -7,7 +7,7 @@ const AvatarWithProgress = ({ imageUrl, progress, sourceLink }) => {
   const size = 70;
 
   return (
-    <div style={{ position: "relative", display: "inline-block" }}>
+    <div className="AvatarWithProgress" style={{ position: "relative", display: "inline-block" }}>
       <Progress
         type="circle"
         percent={progress}
@@ -25,6 +25,8 @@ const AvatarWithProgress = ({ imageUrl, progress, sourceLink }) => {
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
+          transformOrigin: "center center",
+
         }}
       />
       <div

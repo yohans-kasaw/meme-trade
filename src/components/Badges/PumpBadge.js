@@ -14,7 +14,6 @@ const PumpBadge  = ({ count }) => {
       }}
       offset={[15, 8]}
     >
-      {/* <Image src={NotificationIcon} alt="Icon 2" width={24} height={24} /> */}
 
       <NotificationIcon />
     </Badge>

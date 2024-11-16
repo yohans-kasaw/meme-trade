@@ -14,7 +14,6 @@ const MessageBadge = ({ count }) => {
       }}
       offset={[15, 12]}
     >
-      {/* <Image src={MessageIcon} alt="Icon 3" width={24} height={24} /> */}
       <MessageIcon />
     </Badge>
   );

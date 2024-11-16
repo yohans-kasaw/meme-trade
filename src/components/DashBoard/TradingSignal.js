@@ -1,8 +1,8 @@
 import SignalItem from "@/components/DashBoard/SignalItem";
 import NotificationIcon from "@public/svg_icons/notification.svg";
 import DownPiramidIcon from "@public/svg_icons/down_piramid.svg";
-
-import Image from "next/image";
+import SolanaChainIcon from "@public/svg_icons/Solana-chain_filter.svg";
+import TradingSignalBadge from "../Badges/TradingSignalBadge";
 
 const TradingSignal = ({ signals }) => {
   const handleClick = () => {
@@ -12,19 +12,12 @@ const TradingSignal = ({ signals }) => {
   return (
     <div className="flex flex-col gap-3 text-white text-xs justify-center p-2">
       <div className="flex flex-row items-center justify-between px-1">
-        <div className="flex flex-row gap-0 items-center">
-          <NotificationIcon style={{ transform: "scale(0.7)" }} />
-          <div className="bg-accentBlue rounded-sm text-primaryBlack px-1 text-xs">{signals.length}</div>
-        </div>
+        <TradingSignalBadge count={signals.length} />
         <div
           className="flex flex-row justify-start items-center gap-2 bg-darkGray rounded-[6px] border-[1px] border-midGray pl-2 py-1"
           onClick={handleClick}
         >
-          <Image
-            src={"/svg_icons/Solana-chain-image.png"}
-            width={15}
-            height={15}
-          />
+          <SolanaChainIcon/>
           <DownPiramidIcon style={{ transform: "scale(0.7)" }} />
         </div>
       </div>

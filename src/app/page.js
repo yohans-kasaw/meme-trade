@@ -40,7 +40,7 @@ export default function Home() {
   }, [tokensStatus, alarmsStatus, signalsStatus, dispatch]);
 
   return (
-    <div className="h-screen overflow-hidden">
+    <div className="overflow-y-hidden">
       <div>
         <AppBar
           user={{ profile_picture: "/images/profile_avatar_fallback.jpg" }}
@@ -51,7 +51,9 @@ export default function Home() {
           badgeCounts={badgeCounts}
         />
       </div>
-      <TokenBoard tokens={tokens} signals={signals} />
+      <div className="">
+        <TokenBoard tokens={tokens} signals={signals} />
+      </div>
     </div>
   );
 }
