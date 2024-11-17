@@ -1,71 +1,95 @@
 import { tailwindColors } from "@/lib/colors";
-import React from "react";
 import { Avatar, Progress } from "antd";
 import TabletMedIcon from "@public/svg_icons/tablet_med_icon.svg";
+import { useMediaQuery } from "react-responsive";
+import { useEffect, useState } from "react";
 
 const AvatarWithProgress = ({ imageUrl, progress, sourceLink }) => {
-  const size = 70;
+  const [viewWidth, setViewWidth] = useState(window.innerWidth);
+  const avatarSize = Math.min(Math.max(80, viewWidth * 0.05), 180);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setViewWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
-    <div className="AvatarWithProgress" style={{ position: "relative", display: "inline-block" }}>
-      <Progress
-        type="circle"
-        percent={progress}
-        size={size + 5}
-        strokeColor="#36ff62"
-        trailColor="#2b382e"
-        format={() => ""}
-        style={{ transform: "rotate(180deg)" }}
-      />
-      <Avatar
-        src={imageUrl ?? "/images/meme_fallback.png"}
-        size={size} // ensure the size fits within the Progress circle
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          transformOrigin: "center center",
-
-        }}
-      />
+    <div className="flex justify-center items-center overflow-none">
       <div
         style={{
-          position: "absolute",
-          top: "100%",
-          left: "46%",
-          transform: "translate(-50%, -50%)",
-          padding: "4px",
+          display: "grid",
+          gridTemplateAreas: "'stack'",
+          justifyItems: "center",
+          alignItems: "center",
         }}
       >
-        <Avatar
-          size={size - 40}
+        <div
+          style={{ gridArea: "stack" }}
+          className="w-full h-full flex justify-center items-center overflow-hidden"
+        >
+          <Avatar
+            src={imageUrl ?? "/images/meme_fallback.png"}
+            size={avatarSize}
+            style={{
+              objectFit: "contain",
+            }}
+          />
+        </div>
+        <Progress
+          type="circle"
+          percent={progress}
+          size={{}} // don't remove this, this makes it able to get overridden
+          strokeColor="#36ff62"
+          trailColor="#2b382e"
+          format={() => ""}
+          className="xx-big-icon rotate-180"
+          style={{ gridArea: "stack" }}
+        />
+        <div
           style={{
-            position: "relative",
-            backgroundColor: tailwindColors.primaryBlack,
-            fontSize: "10px",
-            borderColor: tailwindColors.accentGreen,
-            borderWidth: "1px",
+            display: "grid",
+            gridTemplateAreas: "'stack'",
+            alignItems: "center",
+            justifyItems: "center",
+            gridArea: "stack",
+            alignSelf: "end",
+            marginBottom: "-15%",
           }}
         >
-          <b>{progress}%</b>
-        </Avatar>
+          <Avatar
+            size={avatarSize / 2.4}
+            style={{
+              gridArea: "stack",
+              backgroundColor: "#000000",
+              borderColor: tailwindColors.accentGreen,
+            }}
+          >
+            <b>{progress}%</b>
+          </Avatar>
 
-        <Avatar
-          size={size - 50}
-          style={{
-            backgroundColor: tailwindColors.primaryBlack,
-            position: "absolute",
-            top: "0",
-            left: "80%",
-            borderColor: tailwindColors.accentGreen,
-            borderWidth: "1px",
-          }}
-        >
-          <a href={sourceLink}>
-            <TabletMedIcon />
-          </a>
-        </Avatar>
+          <Avatar
+            size={avatarSize / 3.8}
+            style={{
+              gridArea: "stack",
+              justifySelf: "end",
+              alignSelf: "start",
+              marginRight: "-45%",
+              marginTop: "-15%",
+              backgroundColor: "#000000",
+              borderColor: tailwindColors.accentGreen,
+            }}
+          >
+            <a href={sourceLink}>
+              <TabletMedIcon />
+            </a>
+          </Avatar>
+        </div>
       </div>
     </div>
   );

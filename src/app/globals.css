@@ -37,7 +37,6 @@ body {
 }
 
 :root {
-  --avatar-progress-size: clamp(30px, calc(5vw + 1rem), 280px);
   --svg-small-size: clamp(15px, calc(0.8vw + 0.5rem), 80px);
   --big-icon-size: clamp(35px, calc(2vw + 0.5rem), 80px);
 }
@@ -48,12 +47,15 @@ svg {
   width: var(--size);
 }
 
-.AvatarWithProgress svg {
-  --size: var(--avatar-progress-size);
+.xx-big-icon svg{
+    --xx-big-icon-size: clamp(80px, 5vw, 180px);
+    width: calc(var(--xx-big-icon-size));
+    height: calc(var(--xx-big-icon-size));
 }
 
-.big-icon {
-  --size: var(--big-icon-size);
+.AvatarImage{
+    width: calc(var(--size) * 2);
+    height: calc(var(--size) * 200);
 }
 
 .x-big-icon {
@@ -61,4 +63,12 @@ svg {
     height: calc(var(--size) * 1.5);
 }
 
+.big-icon {
+  --size: var(--big-icon-size);
+}
+
+.mid-icon {
+  height: calc(var(--big-icon-size) * 0.6);
+  width: calc(var(--big-icon-size) * 0.6);
+}
 

@@ -51,7 +51,7 @@ const TokenActions = ({
                 style={{ gridArea: "stack" }}
               />
               <div
-                className="text-accentBrightGreen pr-2 font-bold"
+                className="text-accentBrightGreen pr-1 font-bold"
                 style={{ gridArea: "stack" }}
               >
                 {total_volume}
