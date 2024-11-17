@@ -24,7 +24,7 @@ const TokenDetails = ({
   source,
 }) => {
   return (
-    <div className="flex-grow flex flex-col gap-0.5">
+    <div className="flex-grow flex flex-col gap-0.5 justify-between h-full">
       <div className="flex flex-row justify-start gap-0.5 text-xs">
         <div>{token_ticker}</div>
         <div className="text-accentGreen w-14 truncate">{token_name}</div>
@@ -65,7 +65,7 @@ const TokenDetails = ({
           rel="noopener noreferrer"
           className={!social_1 ? "hidden" : ""}
         >
-          <TokenXIcon />
+          <TokenXIcon className="big-icon" />
         </a>
         <a
           href={social_2 || "#"}
@@ -73,7 +73,7 @@ const TokenDetails = ({
           rel="noopener noreferrer"
           className={!social_2 ? "hidden" : ""}
         >
-          <TokenTeleIcon />
+          <TokenTeleIcon className="big-icon"/>
         </a>
         <a
           href={website || "#"}
@@ -81,7 +81,7 @@ const TokenDetails = ({
           rel="noopener noreferrer"
           className={!website ? "hidden" : ""}
         >
-          <TokenWebIcon />
+          <TokenWebIcon className="big-icon"/>
         </a>
         <a
           href={source || "#"}
@@ -89,7 +89,7 @@ const TokenDetails = ({
           rel="noopener noreferrer"
           className={!source ? "hidden" : ""}
         >
-          <TokenSourceIcon />
+          <TokenSourceIcon className="big-icon"/>
         </a>
       </div>
     </div>

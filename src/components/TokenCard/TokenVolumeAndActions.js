@@ -35,19 +35,24 @@ const TokenActions = ({
 
   return (
     <div className="h-full">
-      <div className="flex flex-col bg-red-700 h-full justify-between">
-        <div className="bg-green-300 flex-grow flex justify-center items-center">
-          <div>
-            <div className="relative bg-red-300">
-              <VolumeDisplay />
+      <div className="flex flex-col h-full justify-between">
+        <div className="flex-grow flex justify-center items-center">
+          <div className="">
+            <div
+              className="grid" 
+              style={{
+                gridTemplateAreas: "'stack'",
+                justifyItems: "right",
+                alignItems: "center",
+              }}
+            >
+              <VolumeDisplay
+                className="x-big-icon"
+                style={{ gridArea: "stack" }}
+              />
               <div
-                className="absolute text-accentBrightGreen"
-                style={{
-                  transform: "translate(50%, -50%)",
-                  top: "50%",
-                  left: "0",
-                  textAlign: "right",
-                }}
+                className="text-accentBrightGreen pr-2 font-bold"
+                style={{ gridArea: "stack" }}
               >
                 {total_volume}
               </div>
@@ -56,13 +61,13 @@ const TokenActions = ({
         </div>
 
         <div className="flex flex-row justify-end">
-          <div className="flex flex-row justify-end">
+          <div className="flex flex-row justify-end gap-0.5">
             <div
               onClick={user_alarm ? showAlarmDrawer : undefined}
               className={`cursor-pointer ${user_alarm ? "visible" : "invisible"}`}
               title="Set Alarm"
             >
-              <AlarmIcon />
+              <AlarmIcon className="big-icon" />
             </div>
 
             <Popover
@@ -77,7 +82,7 @@ const TokenActions = ({
                 className={`cursor-pointer ${velocity ? "visible" : "invisible"}`}
                 title="Velocity Settings"
               >
-                <VelocityIcon />
+                <VelocityIcon className="big-icon" />
               </div>
             </Popover>
           </div>

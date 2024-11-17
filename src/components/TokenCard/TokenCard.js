@@ -7,16 +7,16 @@ import TokenVolumeAndActions from "@/components/TokenCard/TokenVolumeAndActions"
 
 const TokenCard = ({ token }) => {
   return (
-    <div>
-      <div className="flex flex-col bg-red-400">
-        <div className="flex flex-row justify-between">
-          <div className="bg-yellow-300">
+    <div className="bg-darkGray">
+      <div className="flex flex-col">
+        <div className="flex flex-row justify-between gap-2 items-stretch">
+          <div className="">
             <TokenProfile {...token} />
           </div>
-          <div className="bg-red-300  flex-grow">
+          <div className="flex-grow">
             <TokenDetails {...token} />
           </div>
-          <div className="bg-green-300">
+          <div className="">
             <TokenVolumeAndActions {...token} />
           </div>
         </div>

@@ -21,16 +21,16 @@ const Footer = ({
   CTO_status,
 }) => {
   return (
-    <div className="flex flex-row bg-darkGray justify-start items-center gap-[0.4vw]">
+    <div className="flex flex-row bg-darkGray justify-center items-center gap-1 text-[12px]">
       <DevIcon />
-      <div className="flex flex-row">
+      <div className="flex flex-row items-center">
         <StarVectorIcon /> <div> {star_rating}/10</div>
       </div>
       <GlassEmojiIcon />
-      <div className="flex flex-row">
+      <div className="flex flex-row items-center">
         <WalletTickIcon /> <div>{insider_wallets_percentage}</div>
       </div>
-      <div className="flex flex-row">
+      <div className="flex flex-row items-center">
         <WarningIcon /> <div>{bonding_curve_progress}</div>
       </div>
       <div className={`${DEX_status === "Listed" ? "visible" : "invisible"}`}>
