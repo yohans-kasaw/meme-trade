@@ -3,7 +3,7 @@ import MoonShotIcon from "@public/svg_icons/moon_shot.svg";
 
 function SignalItem({ signal }) {
   return (
-    <div className="my-1 text-white text-xs">
+    <div className="my-1 text-white text-xs px-1">
       {/* Signal Type */}
       <div
         className={`flex items-center py-1 mb-2 border ${

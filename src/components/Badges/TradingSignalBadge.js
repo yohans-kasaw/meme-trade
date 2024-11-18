@@ -1,7 +1,7 @@
 import { Badge } from "antd";
 import PumpIcon from "@public/svg_icons/pump_icon.svg";
 
-const TradingSignalBadge = ({ count }) => {
+const TradingSignalBadge = ({ count, small=false }) => {
   return (
     <Badge
       count={count}
@@ -12,10 +12,10 @@ const TradingSignalBadge = ({ count }) => {
         backgroundColor: "#00C2FF",
         color: "#000000",
       }}
-      offset={[15, 10]}
+      offset={[11, 11]}
     >
       {/* <Image src={PumpIcon} alt="Icon 3" width={24} height={24} /> */}
-      <PumpIcon />
+      <PumpIcon  className={small ? "":"big-icon"} />
     </Badge>
   );
 };

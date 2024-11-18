@@ -53,7 +53,7 @@ const FilterDrawer = () => {
   };
 
   return (
-    <div className="bg-darkGray text-white p-2 px-6 shadow-lg overflow-y-auto text-xs">
+    <div className="bg-darkGray text-white p-2 px-6 shadow-lg overflow-y-auto text-xs h-full">
       <DrawerHeader
         title="Token Filters"
         onApply={handleApply}

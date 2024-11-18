@@ -47,7 +47,7 @@ const AlertDrawer = () => {
       {/* Form Section */}
       <div className="flex items-streach justify-between  border-b-[1px] ">
         <div className="flex flex-row bg-[#006F9280] w-1/2  pb-[4px] pl-2">
-          <div className="flex items-end text-[20px] font-semibold">
+          <div className="flex items-end !text-xs font-semibold">
             {"Alarms"}
             <span className="ml-2 flex items-end">
               <AlarmIcon />
@@ -59,13 +59,13 @@ const AlertDrawer = () => {
           <div
             onClick={clearForm}
             type="text"
-            className="!text-white !font-bold !text-[12px]"
+            className="!text-white !text-xs"
           >
             Cancel
           </div>
           <Button
             onClick={handleAddAlarm}
-            className="!bg-green-700  !text-white !text-[14px] !py-2 !px-4 !font-bold"
+            className="!bg-green-700  !text-white !py-2 !px-4"
             type="primary"
             size="large"
           >

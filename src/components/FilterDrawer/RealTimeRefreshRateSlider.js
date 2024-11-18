@@ -42,7 +42,7 @@ const RealTimeRefreshRateSlider = ({
           }}
         />
       </ConfigProvider>
-      <div className="font-bold pb-6">
+      <div className="pb-6">
         Selected Refresh Rate: {refreshRates[refreshRateIndex].label}
       </div>
     </div>

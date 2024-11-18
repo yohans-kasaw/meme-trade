@@ -6,25 +6,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   font-family: "Nico Moji", sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-  }
 }
 
 .velocity-custom-popover {
@@ -53,12 +36,57 @@ body {
   border-radius: 6px;
 }
 
-svg {
-  height: calc(0.4vw + 0.4rem);
-  width: calc(0.4vw + 0.4rem);
+/* WebKit Browsers (Chrome, Safari, Edge Chromium) */
+*::-webkit-scrollbar {
+  width: 4px;  /* For vertical scrollbars */
+  height: 4px; /* For horizontal scrollbars */
 }
 
-.AvatarWithProgress svg{
-  height: calc(2vw + 1rem);
-  width: calc(2vw + 1rem);
+*::-webkit-scrollbar-thumb {
+  background-color: #85999b;
+  border-radius: 6px;
 }
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 6px;
+}
+
+
+:root {
+  --svg-small-size: clamp(15px, calc(0.8vw + 0.5rem), 80px);
+  --big-icon-size: clamp(35px, calc(2vw + 0.5rem), 80px);
+}
+
+
+svg {
+  --size: var(--svg-small-size);
+  height: var(--size);
+  width: var(--size);
+}
+
+.xx-big-icon svg{
+    --xx-big-icon-size: clamp(75px, 5vw, 180px);
+    width: calc(var(--xx-big-icon-size));
+    height: calc(var(--xx-big-icon-size));
+}
+
+.AvatarImage{
+    width: calc(var(--size) * 2);
+    height: calc(var(--size) * 200);
+}
+
+.x-big-icon {
+    width: calc(var(--size) * 4);
+    height: calc(var(--size) * 1.5);
+}
+
+.big-icon {
+  --size: var(--big-icon-size);
+}
+
+.mid-icon {
+  height: calc(var(--big-icon-size) * 0.6);
+  width: calc(var(--big-icon-size) * 0.6);
+}
+

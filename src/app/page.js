@@ -40,19 +40,18 @@ export default function Home() {
   }, [tokensStatus, alarmsStatus, signalsStatus, dispatch]);
 
   return (
-    <div className="overflow-y-hidden">
+    <div className="flex flex-col h-screen justify-start overflow-y-hidden">
       <div>
         <AppBar
           user={{ profile_picture: "/images/profile_avatar_fallback.jpg" }}
           onSearch={(searchTerm) => {
-            // Handle the search term here
             console.log("Searching for:", searchTerm);
           }}
           badgeCounts={badgeCounts}
         />
       </div>
-      <div className="">
-        <TokenBoard tokens={tokens} signals={signals} />
+      <div className="flex flex-col flex-grow">
+          <TokenBoard tokens={tokens} signals={signals} />
       </div>
     </div>
   );

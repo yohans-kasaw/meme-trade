@@ -4,19 +4,12 @@ import DownPiramidIcon from "@public/svg_icons/down_piramid.svg";
 import SortSettingIcon from "@public/svg_icons/sort_setting.svg";
 import FilterSettingIcon from "@public/svg_icons/filter_setting_icon.svg";
 import { useMediaQuery } from "react-responsive";
+import { CountBadge } from "@/components/Badges/CountBadge";
 
 import SolanaChainIcon from "@public/svg_icons/Solana-chain_filter.svg";
 
 import FilterDrawer from "@/components/FilterDrawer/FilterDrawer";
 import SortingOptionsDrawer from "@/components/SortingDrawer/SortingOptionsDrawer";
-
-export function CountBadge({ count }) {
-  return (
-    <div className="bg-accentLime rounded-sm text-primaryBlack px-1 text-xs">
-      <div className="">{count}</div>
-    </div>
-  );
-}
 
 export function FilterButton({
   children,
@@ -26,7 +19,7 @@ export function FilterButton({
 }) {
   return (
     <div
-      className={`flex flex-row justify-start items-center ${gapClass} bg-darkGray rounded-[6px] border-[1px] border-midGray py-0.5 ${additionalClass}`}
+      className={`flex flex-row justify-start items-center ${gapClass} bg-darkGray rounded-[6%] border-[1px] border-midGray py-0.5 ${additionalClass}`}
       onClick={onClick}
     >
       {children}
@@ -59,11 +52,11 @@ function TokenFilterPanel() {
   return (
     <>
       <div className="text-white flex justify-center gap-1.5 p-1">
-        <FilterButton gapClass="pr-1">
+        <FilterButton gapClass="px-[2%] gap-1">
           <SolanaChainIcon />
-          <DownPiramidIcon />
+          <DownPiramidIcon style={{ transform: "scale(0.7)" }} />
         </FilterButton>
-        <FilterButton additionalClass="pr-1" onClick={openFilterDrawer}>
+        <FilterButton additionalClass="pr-1 py-2" onClick={openFilterDrawer}>
           <FilterSettingIcon style={{width:"4vw"}}/>
           <CountBadge count={5} />
         </FilterButton>
@@ -81,6 +74,7 @@ function TokenFilterPanel() {
         open={filterDrawerVisible}
         styles={{ body: { padding: 0 } }}
         height="90%"
+        width="25%"
         maskClosable={true}
       >
         <FilterDrawer />
@@ -94,6 +88,7 @@ function TokenFilterPanel() {
         open={sortingDrawerVisible}
         styles={{ body: { padding: 0 } }}
         height="90%"
+        width="25%"
         maskClosable={true}
       >
         <SortingOptionsDrawer />
