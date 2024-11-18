@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 const AvatarWithProgress = ({ imageUrl, progress, sourceLink }) => {
   const [viewWidth, setViewWidth] = useState(window.innerWidth);
-  const avatarSize = Math.min(Math.max(80, viewWidth * 0.05), 180);
+  const avatarSize = Math.min(Math.max(75, viewWidth * 0.05), 180);
 
   useEffect(() => {
     const handleResize = () => {

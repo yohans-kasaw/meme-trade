@@ -32,7 +32,7 @@ module.exports = {
       },
       fontSize: {
         // Override the 'xs' size
-        xs: "clamp(12px,calc(0.6vw + 0.5rem),80px)",
+        xs: "clamp(12px,calc(0.5vw + 0.4rem),80px)",
       },
     },
   },

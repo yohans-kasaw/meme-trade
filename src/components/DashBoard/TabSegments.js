@@ -1,5 +1,7 @@
 import { useState } from "react";
+
 import NotificationIcon from "@public/svg_icons/notification.svg";
+import TradingSignalBadge from "../Badges/TradingSignalBadge";
 
 const CustomSegmented = ({ value, onChange, signalsCount, options = [] }) => {
   const [selected, setSelected] = useState(value || options[0]);
@@ -10,12 +12,12 @@ const CustomSegmented = ({ value, onChange, signalsCount, options = [] }) => {
   };
 
   return (
-    <div className="sticky bottom-0 mt-1 flex justify-center  overflow-hidden gap-2">
+    <div className="sticky bottom-0 pb-2 mt-1 flex justify-center  overflow-hidden gap-2 bg-black pt-2">
       {options.map((option, index) => (
         <button
           key={index}
           onClick={() => handleSelect(option)}
-          className={`transition-colors duration-200 rounded-sm text-primaryBlack px-4 text-lg ${
+          className={`rounded-sm text-primaryBlack px-4 py-2 ${
             selected === option
               ? selected == "4"
                 ? "border-2 border-accentLime"
@@ -24,17 +26,7 @@ const CustomSegmented = ({ value, onChange, signalsCount, options = [] }) => {
           }`}
         >
           {option != "4" && option}
-          {option == "4" && (
-            <div className="flex flex-row items-center justify-start">
-                <NotificationIcon style={{ transform: "scale(0.7)" }} />
-              <div
-                className="bg-accentBlue rounded-sm text-primaryBlack px-2 ml-[-10px]"
-                style={{ transform: "scale(0.6)" }}
-              >
-                {signalsCount}
-              </div>
-            </div>
-          )}
+          {option == "4" && <div className="pr-2"> <TradingSignalBadge count={signalsCount} small={true}/> </div>}
         </button>
       ))}
     </div>

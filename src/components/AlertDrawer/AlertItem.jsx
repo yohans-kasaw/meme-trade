@@ -24,7 +24,7 @@ const AlertItem = ({
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           {/* <AlarmIcon className="w-5 h-5" /> */}
-          <h3 className="font-bold text-xs">{title}</h3>
+          <h3 className="text-xs">{title}</h3>
         </div>
         <div className="flex items-center gap-3">
           <button onClick={onEdit} className="hover:text-accentGreen">
@@ -41,11 +41,11 @@ const AlertItem = ({
 
       {/* Content */}
       <div>
-        <p className="text-xs mb-1 font-semibold">
+        <p className="text-xs mb-1">
           Alert me when: <span className="text-accentLime">{type}</span>
         </p>
         <p
-          className={`text-xs font-bold ${
+          className={`text-xs ${
             condition.includes("Down") ? "text-accentPink" : "text-accentGreen"
           }`}
         >
@@ -57,7 +57,7 @@ const AlertItem = ({
       </div>
 
       {/* Footer */}
-      <div className="flex items-center justify-end pt-2 text-xs font-semibold gap-3">
+      <div className="flex items-center justify-end pt-2 text-xs gap-3">
         <div>
           <span className="text-grayText">Created </span>
           <span> {createdTime} ago</span>

@@ -36,10 +36,28 @@ body {
   border-radius: 6px;
 }
 
+/* WebKit Browsers (Chrome, Safari, Edge Chromium) */
+*::-webkit-scrollbar {
+  width: 4px;  /* For vertical scrollbars */
+  height: 4px; /* For horizontal scrollbars */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #85999b;
+  border-radius: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 6px;
+}
+
+
 :root {
   --svg-small-size: clamp(15px, calc(0.8vw + 0.5rem), 80px);
   --big-icon-size: clamp(35px, calc(2vw + 0.5rem), 80px);
 }
+
 
 svg {
   --size: var(--svg-small-size);
@@ -48,7 +66,7 @@ svg {
 }
 
 .xx-big-icon svg{
-    --xx-big-icon-size: clamp(80px, 5vw, 180px);
+    --xx-big-icon-size: clamp(75px, 5vw, 180px);
     width: calc(var(--xx-big-icon-size));
     height: calc(var(--xx-big-icon-size));
 }

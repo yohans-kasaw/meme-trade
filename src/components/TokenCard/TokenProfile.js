@@ -9,7 +9,7 @@ const TokenProfile = ({ external_links, source, bonding_curve_progress }) => {
   const progress = parseFloat(bonding_curve_progress.replace("%", ""));
   return (
     <div className="flex flex-col h-full">
-      <div className="">
+      <div className="pr-1.5">
         <AvatarWithProgress
           imageUrl={external_links.image_link || "/images/meme_fallback.png"}
           progress={progress}

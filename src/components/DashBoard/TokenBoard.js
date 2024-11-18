@@ -44,9 +44,9 @@ function TokenBoard({ tokens, signals }) {
 
   const [alignValue, setAlignValue] = useState("1");
   return (
-    <div>
+    <div className="flex flex-grow justify-center">
       {isLargeScreen ? (
-        <div className="flex flex-row items-streach text-white px-1">
+        <div className="flex flex-row items-streach text-white px-1 overflow-x-auto">
           {tabItems.map((item, index) => (
             <div
               key={index}
@@ -57,7 +57,7 @@ function TokenBoard({ tokens, signals }) {
           ))}
         </div>
       ) : (
-        <div className="text-white md:max-w-[70vw] md:m-auto">
+        <div className="flex flex-col text-white mx-auto">
           <Tabs
             defaultActiveKey="1"
             type="card"
@@ -66,6 +66,7 @@ function TokenBoard({ tokens, signals }) {
             activeKey={alignValue}
             animated={true}
             renderTabBar={() => null}
+            className="flex-grow"
           />
           <TabSegments
             value={alignValue}

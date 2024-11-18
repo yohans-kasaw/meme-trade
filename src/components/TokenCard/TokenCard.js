@@ -7,9 +7,9 @@ import TokenVolumeAndActions from "@/components/TokenCard/TokenVolumeAndActions"
 
 const TokenCard = ({ token }) => {
   return (
-    <div className="">
+    <div className="mx-1">
       <div className="flex flex-col gap-1">
-        <div className="flex flex-row justify-between gap-2 items-stretch bg-darkGray">
+        <div className="flex flex-row justify-between gap-1 items-stretch bg-darkGray rounded-md px-1 py-1">
           <div className="">
             <TokenProfile {...token} />
           </div>
@@ -20,7 +20,7 @@ const TokenCard = ({ token }) => {
             <TokenVolumeAndActions {...token} />
           </div>
         </div>
-        <Footer {...token} />
+        <Footer {...token}/>
       </div>
     </div>
   );

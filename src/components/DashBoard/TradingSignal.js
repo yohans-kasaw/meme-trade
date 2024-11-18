@@ -12,7 +12,7 @@ const TradingSignal = ({ signals }) => {
   return (
     <div className="flex flex-col gap-3 text-white text-xs justify-center p-2">
       <div className="flex flex-row items-center justify-between px-1">
-        <TradingSignalBadge count={signals.length} />
+        <TradingSignalBadge count={signals.length}/>
         <div
           className="flex flex-row justify-start items-center gap-2 bg-darkGray rounded-[6px] border-[1px] border-midGray pl-2 py-1"
           onClick={handleClick}
@@ -23,7 +23,7 @@ const TradingSignal = ({ signals }) => {
       </div>
 
       {/* list of signals */}
-      <div className="flex flex-col gap-1 h-[86vh] overflow-y-scroll">
+      <div className="flex flex-col gap-1 h-[86vh] overflow-y-auto px-1">
         {signals.map((signal, index) => (
           <SignalItem key={index} signal={signal} />
         ))}

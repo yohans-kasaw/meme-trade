@@ -97,6 +97,7 @@ const TokenActions = ({
         closable={false}
         styles={{ body: { padding: 0 } }}
         height="90%"
+        width="25%"
         maskClosable={true}
       >
         <AlertDrawer />

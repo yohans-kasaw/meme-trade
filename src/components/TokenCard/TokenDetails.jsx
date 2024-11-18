@@ -35,7 +35,7 @@ const TokenDetails = ({
       </div>
       <div className="flex flex-row justify-start gap-1 text-xs">
         <div>
-          <div className="border border-accentBlue rounded px-0.5 text-accentBrightGreen">
+          <div className="border border-accentBlue rounded-lg px-0.5 py-0.5 text-accentBrightGreen font-bold">
             {time_from_creation}
           </div>
         </div>

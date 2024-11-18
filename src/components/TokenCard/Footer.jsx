@@ -21,7 +21,7 @@ const Footer = ({
   CTO_status,
 }) => {
   return (
-    <div className="flex flex-row bg-darkGray justify-center items-center gap-1 text-[12px]">
+    <div className="flex flex-row bg-darkGray justify-start items-center gap-1 rounded-md px-2 py-1">
       <DevIcon />
       <div className="flex flex-row items-center">
         <StarVectorIcon /> <div> {star_rating}/10</div>

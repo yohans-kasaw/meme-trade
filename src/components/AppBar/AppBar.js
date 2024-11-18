@@ -75,7 +75,7 @@ const AppBar = ({
       <div className="hidden lg:flex items-center space-x-12">
         <FireCallBadge count={badgeCounts.fireCall} />
         <PumpBadge count={badgeCounts.pump} />
-        <TradingSignalBadge count={badgeCounts.signalsCount} />
+        <TradingSignalBadge count={badgeCounts.signalsCount} small={true}/>
         <MessageBadge count={badgeCounts.message} />
         <Avatar
           src={user?.profile_picture || "/images/profile_avatar_fallback.jpg"}
